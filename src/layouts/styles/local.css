@@ -1,0 +1,20 @@
+body {
+	background-color: #171c1c;
+	color: #e3e8e8;
+}
+
+main {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+	font-weight: normal;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+h1 {
+	font-weight: 100;
+	letter-spacing: 1px;
+	text-transform: lowercase;
+}

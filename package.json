@@ -1,17 +1,49 @@
 {
   "name": "cyberfern.com",
+  "private": true,
+  "homepage": "https://cyberfern.com/",
+  "license": "MIT",
+  "author": "Charles Munat <coder@craft-code.dev>",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
+    "api": "vercel dev --listen 3015",
+    "astro": "astro",
+    "build": "astro build",
+    "bump": "pnpm version patch --force",
+    "bump:major": "pnpm version major --force",
+    "bump:minor": "pnpm version minor --force",
+    "check:exports": "pnpx find-unused-exports",
+    "check:packages": "pnpx npm-check -u",
+    "dep": "pnpm fmt && pnpm lint && pnpm lint:fix && pnpm check:packages && infisical run -- pnpm build && rm -rf .cache .history dist",
+    "dep:prod": "pnpm dep:dev && vercel deploy",
     "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
+    "fmt": "pnpm prettier . --write",
+    "lint": "pnpx oxlint@latest",
+    "lint:css": "pnpm stylelint \"src/**/*.css\"",
+    "lint:fix": "pnpm stylelint \"src/**/*.css\" --fix",
     "preview": "astro preview",
-    "astro": "astro"
+    "push": "git add -A && pnpm bump && git push",
+    "start": "astro dev",
+    "test": "pnpm test:int"
   },
-  "dependencies": {
-    "astro": "^4.5.16",
+  "devDependencies": {
     "@astrojs/check": "^0.5.10",
-    "typescript": "^5.4.4"
+    "@astrojs/mdx": "^2.2.4",
+    "@astrojs/sitemap": "^3.1.2",
+    "@astrojs/vercel": "^7.5.2",
+    "@types/qrcode": "^1.5.5",
+    "@vercel/node": "^3.0.26",
+    "astro": "^4.5.16",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "qrcode": "^1.5.3",
+    "stylelint": "^16.3.1",
+    "stylelint-config-standard": "^36.0.0",
+    "temporal-polyfill": "^0.2.4",
+    "typescript": "^5.4.4",
+    "vercel": "^33.7.0",
+    "vite": "^5.2.8",
+    "vite-plugin-compress": "^2.1.1"
   }
 }

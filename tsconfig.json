@@ -22,7 +22,6 @@
 			"~components/*": ["src/components/*"],
 			"~constants": ["src/constants"],
 			"~layouts/*": ["src/layouts/*"],
-			"~metadata/*": ["src/metadata/*"],
 			"~pages/*": ["src/pages/*"],
 			"~types": ["src/types"],
 			"~utilities/*": ["src/utilities/*"]

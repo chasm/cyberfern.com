@@ -3,12 +3,157 @@ import Layout from "../layouts/index.astro"
 ---
 
 <Layout title="CyberFern.com">
+	<header>
+		<div>
+			<div class="logo">
+				<p>CyberFern</p>
+				<address>Wellington, New Zealand</address>
+			</div>
+			<nav>
+				<ul>
+					<li>
+						<a href="#about">About</a>
+					</li>
+					<li>
+						<a href="#contact">Contact</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
 	<main>
-		<img
-			alt="CyberFern.com"
-			height="99"
-			src="/logo.png"
-			width="310"
-		/>
+		<section class="hero">
+			<div>
+				<div class="hero-text">
+					<h1>Fostering Cyber Resilience</h1>
+					<p>
+						Welcome to CyberFern, where we empower your business providing
+						expert guidance in cyber resilience, cyber intelligence, cyber risk
+						assessment and management. We will help you to navigate your
+						business securely through the modern digital landscape. Let&rsquo;s
+						build a safer future together.
+					</p>
+					<p>
+						Let&rsquo;s talk!
+						<a
+							class="button"
+							href="https://calendly.com/annalezhikova-ne7b/cybersecruitychat"
+							rel="external"
+							>Book a chat</a
+						>
+					</p>
+				</div>
+				<div class="hero-image">
+					<img
+						alt=""
+						height="2400"
+						src="/images/cams.jpg"
+						style="filter: opacity(0.6)"
+						width="1603"
+					/>
+				</div>
+			</div>
+		</section>
+		<section class="what">
+			<header>
+				<h2>What We Do</h2>
+			</header>
+			<div class="cards">
+				<div class="card">
+					<img
+						alt=""
+						height="4000"
+						src="/images/temp.jpg"
+						width="3000"
+					/>
+					<h3>Risk management</h3>
+					<p>
+						Fee-fi-fo-fum, I smell the bones of an Englishman, Be he alive, or
+						be he dead I'll grind his bones. And get his dough. And spend it on
+						a new Lamborghini. Because I want one.
+					</p>
+				</div>
+				<div class="card">
+					<img
+						alt=""
+						height="4000"
+						src="/images/temp.jpg"
+						width="3000"
+					/>
+					<h3>Assessments</h3>
+					<p>
+						Hickory dickory dock. The mouse ran up the clock. The clock struck
+						one, The mouse ran down, Hickory dickory dock. The clock struck
+						twelve, The mouse ran down again, Hickory dickory dock.
+					</p>
+				</div>
+				<div class="card">
+					<img
+						alt=""
+						height="4000"
+						src="/images/temp.jpg"
+						width="3000"
+					/>
+					<h3>Training</h3>
+					<p>
+						Boost cyber defense with tailored awareness campaigns, relevant
+						newsletters, tabletop drills, and incident response workshops.
+						Strengthen your team today.
+					</p>
+				</div>
+			</div>
+		</section>
+		<div class="why">
+			<heading>
+				<h2>Why Choose Us?</h2>
+			</heading>
+			<p>
+				We use a holistic approach, integrating people, processes, and
+				technology—human-centric and business-oriented solutions for robust
+				cybersecurity.
+			</p>
+		</div>
 	</main>
+	<section class="about">
+		<header>
+			<h2>About</h2>
+		</header>
+		<div>
+			<img
+				alt=""
+				height="3855"
+				src="/images/lady.jpg"
+				width="4819"
+			/>
+			<div class="about-content">
+				<p>CyberFern was founded by Anna Lezhikova.</p>
+				<p>
+					She has over 20 years of experience in communications, business
+					management, software development, DevOps and DevSecOps. She
+					understands not only the technology, but also people and processes:
+					the triad of good cybersecurity.
+				</p>
+				<p>
+					Let&rsquo;s work together to protect what matters most to you and your
+					organisation.
+				</p>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<h2 class="sr-only">Supplemental information</h2>
+		<nav class="supplemental">
+			<ul>
+				<li>
+					<a href="/cookie-policy">Cookies</a>
+				</li>
+				<li>
+					<a href="/privacy-policy">Privacy</a>
+				</li>
+				<li>
+					<a href="/terms-of-use">Terms</a>
+				</li>
+			</ul>
+		</nav>
+	</footer>
 </Layout>

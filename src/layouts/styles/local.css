@@ -3,6 +3,8 @@
 	--color-shaded: #e2e1cf;
 	--color-dark: #134e31;
 	--color-highlight: #ffe900;
+	--color-link: oklch(45% 0.157 247);
+	--color-link-visited: oklch(47.1% 0.157 296);
 
 	/* font sizes */
 	--step-0: clamp(1rem, 0.913rem + 0.4348vi, 1.25rem);
@@ -61,6 +63,15 @@
 
 .sr-only {
 	display: none !important;
+}
+
+main a {
+	color: var(--color-link);
+	text-underline-offset: 2px;
+}
+
+main a:visited {
+	color: var(--color-link-visited);
 }
 
 body {

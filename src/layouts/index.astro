@@ -28,6 +28,40 @@ const { title } = Astro.props
 		<title>{title}</title>
 	</head>
 	<body>
+		<header>
+			<div>
+				<div class="logo">
+					<p>CyberFern</p>
+					<address>Wellington, New Zealand</address>
+				</div>
+				<nav>
+					<ul>
+						<li>
+							<a href="#about">About</a>
+						</li>
+						<li>
+							<a href="#contact">Contact</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
 		<slot />
+		<footer>
+			<h2 class="sr-only">Supplemental information</h2>
+			<nav class="supplemental">
+				<ul>
+					<li>
+						<a href="/cookie-policy">Cookies</a>
+					</li>
+					<li>
+						<a href="/privacy-policy">Privacy</a>
+					</li>
+					<li>
+						<a href="/terms-of-use">Terms</a>
+					</li>
+				</ul>
+			</nav>
+		</footer>
 	</body>
 </html>

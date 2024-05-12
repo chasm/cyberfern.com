@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"author": "Charles Munat <coder@craft-code.dev>",
 	"type": "module",
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"scripts": {
 		"api": "vercel dev --listen 3015",
 		"astro": "astro",

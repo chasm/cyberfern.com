@@ -189,9 +189,19 @@ body > header > nav {
 	padding-inline: var(--space-m);
 }
 
+article.page {
+	margin: 1rem auto 4rem;
+	max-width: min(1240px, calc(100vw - calc(var(--space-m) * 2)));
+}
+
 .hero {
 	background-color: var(--color-dark);
 	width: 100vw;
+}
+
+h1 {
+	font-size: var(--step-5);
+	font-weight: 500;
 }
 
 h2 {

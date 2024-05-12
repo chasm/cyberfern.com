@@ -7,7 +7,9 @@ const ignore = []
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://cyberfern.com/",
+	devToolbar: {
+		enabled: false,
+	},
 	integrations: [
 		mdx(),
 		sitemap({
@@ -16,4 +18,5 @@ export default defineConfig({
 			lastmod: new Date(),
 		}),
 	],
+	site: "https://cyberfern.com/",
 })

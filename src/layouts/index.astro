@@ -6,6 +6,8 @@ type Props = {
 }
 
 const { title } = Astro.props
+
+const isHome = Astro.url.pathname.length < 2
 ---
 
 <!doctype html>
@@ -31,13 +33,26 @@ const { title } = Astro.props
 		<header>
 			<div>
 				<div class="logo">
-					<p>CyberFern</p>
+					<p>
+						{
+							isHome ? (
+								"CyberFern"
+							) : (
+								<a
+									href="/"
+									title="To the home page."
+								>
+									CyberFern
+								</a>
+							)
+						}
+					</p>
 					<address>Wellington, New Zealand</address>
 				</div>
 				<nav>
 					<ul>
 						<li>
-							<a href="#about">About</a>
+							<a href="/#about">About</a>
 						</li>
 						<li>
 							<a href="#contact">Contact</a>
@@ -52,9 +67,6 @@ const { title } = Astro.props
 			<nav class="supplemental">
 				<ul>
 					<li>
-						<a href="/cookie-policy">Cookies</a>
-					</li>
-					<li>
 						<a href="/privacy-policy">Privacy</a>
 					</li>
 					<li>
@@ -62,6 +74,15 @@ const { title } = Astro.props
 					</li>
 				</ul>
 			</nav>
+			<section
+				id="contact"
+				class="contact-info"
+			>
+				<h3 class="sr-only">Contact info</h3>
+				<span>Contact Anna:</span>
+				<a href="tel:+642102736163">+64 (0) 210 273 6163</a>
+				<a href="mailto:info@cyberfern.com">info@cyberfern.com</a>
+			</section>
 		</footer>
 	</body>
 </html>

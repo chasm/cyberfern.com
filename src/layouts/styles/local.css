@@ -3,8 +3,8 @@
 	--color-shaded: #e2e1cf;
 	--color-dark: #134e31;
 	--color-highlight: #ffe900;
-	--color-link: oklch(45% 0.157 247);
-	--color-link-visited: oklch(47.1% 0.157 296);
+	--color-link: oklch(45% 0.157 247deg);
+	--color-link-visited: oklch(47.1% 0.157 296deg);
 
 	/* font sizes */
 	--step-0: clamp(1rem, 0.913rem + 0.4348vi, 1.25rem);
@@ -67,11 +67,58 @@
 
 main a {
 	color: var(--color-link);
+	text-decoration: none;
 	text-underline-offset: 2px;
+}
+
+nav > ul a {
+	background-color: var(--color-dark);
+	color: var(--color-light);
+	display: inline-block;
+	letter-spacing: 0.7px;
+	padding: 0.25rem;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+body > header a,
+.contact-info a {
+	background-color: var(--color-dark);
+	color: var(--color-light);
+	display: inline-block;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.contact-info a {
+	text-transform: lowercase;
 }
 
 main a:visited {
 	color: var(--color-link-visited);
+}
+
+main a:focus,
+main a:hover {
+	text-decoration: underline;
+}
+
+body > header .logo a {
+	text-transform: none;
+}
+
+nav > ul a:focus,
+nav > ul a:hover,
+.contact-info a:focus,
+.contact-info a:hover {
+	outline: 2px solid var(--color-highlight);
+	outline-offset: 3px;
+}
+
+body > header .logo a:focus,
+body > header .logo a:hover {
+	outline: 2px solid var(--color-highlight);
+	outline-offset: 3px;
 }
 
 body {
@@ -142,14 +189,6 @@ body > header > nav {
 	padding-inline: var(--space-m);
 }
 
-body > header a {
-	background-color: var(--color-dark);
-	color: var(--color-light);
-	display: inline-block;
-	text-decoration: none;
-	text-transform: uppercase;
-}
-
 .hero {
 	background-color: var(--color-dark);
 	width: 100vw;
@@ -201,7 +240,7 @@ h2 {
 }
 
 .card > img {
-	filter: hue-rotate(320deg);
+	border: 1px solid var(--color-shaded);
 	height: auto;
 	width: 100%;
 }
@@ -246,7 +285,7 @@ h2 {
 .why > :last-child {
 	flex-basis: 0;
 	flex-grow: 999;
-	min-inline-size: 65%;
+	min-inline-size: 50%;
 }
 
 .hero-image {
@@ -280,13 +319,14 @@ h2 {
 	padding: 0;
 }
 
-a.button {
+a.button,
+a.button:visited {
 	align-items: center;
 	background-color: var(--color-dark);
 	border: 2px solid var(--color-light);
 	border-radius: 5px;
 	color: var(--color-light);
-	display: flex-inline;
+	display: inline;
 	font-size: var(--step-0);
 	justify-content: center;
 	margin-left: 0.5rem;
@@ -303,7 +343,7 @@ a.button:hover {
 	border-color: var(--color-highlight);
 	color: var(--color-highlight);
 	outline: 2px solid var(--color-highlight);
-	outline-offset: 3px;
+	outline-offset: 3px 5px;
 }
 
 main {
@@ -318,11 +358,11 @@ main {
 }
 
 body > footer {
-	align-items: stretch;
+	align-items: center;
 	background-color: var(--color-dark);
 	color: var(--color-light);
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
 	gap: var(--space-s);
 	height: min-content;
 	justify-content: space-between;
@@ -331,12 +371,19 @@ body > footer {
 	padding-inline: var(--space-m);
 }
 
+.contact-info {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: flex-end;
+	width: max-content;
+}
+
 nav.supplemental {
-	margin: auto;
-	max-width: min(1240px, calc(100vw - calc(var(--space-m) * 2)));
 	padding: 0;
 	text-align: left;
-	width: 100%;
+	width: min-content;
 }
 
 nav > ul {
@@ -349,18 +396,23 @@ nav > ul {
 	padding: 0;
 }
 
-nav > ul a {
-	background-color: var(--color-dark);
-	color: var(--color-light);
-	display: inline-block;
-	letter-spacing: 0.7px;
-	padding: 0.25rem;
-	text-decoration: none;
-	text-transform: uppercase;
-}
+@media screen and (width <= 48rem) {
+	nav.supplemental {
+		width: 100vw;
+	}
 
-nav > ul a:focus,
-nav > ul a:hover {
-	outline: 2px solid var(--color-highlight);
-	outline-offset: 3px;
+	body > header > div {
+		gap: 1rem;
+	}
+
+	nav.supplemental ul {
+		justify-content: center;
+		text-align: center;
+	}
+
+	.contact-info {
+		flex-direction: column;
+		justify-content: space-around;
+		width: 100vw;
+	}
 }

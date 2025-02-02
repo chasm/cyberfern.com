@@ -1,14 +1,17 @@
 ---
+import "../../layouts/styles/legal.css"
+
 import Layout from "../../layouts/index.astro"
 
 const meta = {
 	description: "CyberFern.com terms of use",
+	robots: ["noindex", "nofollow"],
 	title: "Terms of use :: CyberFern.com",
 }
 ---
 
 <Layout {meta}>
-	<main>
+	<main class="terms-of-use">
 		<article class="page">
 			<h1>Terms of use</h1>
 			<p>By viewing and using this site, you agree to these terms of use.</p>
@@ -33,7 +36,7 @@ const meta = {
 				</p>
 				<section id="disclaimer">
 					<header>
-						<h2>Disclaimer</h2>
+						<h3>Disclaimer</h3>
 					</header>
 					<p>CyberFern disclaims and excludes all liability for any</p>
 					<ol>
@@ -57,7 +60,7 @@ const meta = {
 				</section>
 				<section id="continuity-of-service">
 					<header>
-						<h2>Continuity of service</h2>
+						<h3>Continuity of service</h3>
 					</header>
 					<p>
 						CyberFern makes no warranty or representation, express or implied,
@@ -68,7 +71,7 @@ const meta = {
 				</section>
 				<section id="your-information">
 					<header>
-						<h2>Your information</h2>
+						<h3>Your information</h3>
 					</header>
 					<p>
 						We may treat any material you send or post publicly to the site as
@@ -80,7 +83,7 @@ const meta = {
 				</section>
 				<section id="copyright">
 					<header>
-						<h2>Copyright</h2>
+						<h3>Copyright</h3>
 					</header>
 					<p>
 						All information on this site is copyright 2024 by CyberFern.com. All
@@ -90,7 +93,7 @@ const meta = {
 				</section>
 				<section id="revisions-to-these-terms-of-use">
 					<header>
-						<h2>Revisions to terms of use</h2>
+						<h3>Revisions to terms of use</h3>
 					</header>
 					<p>
 						CyberFern may revise these terms of use at any time. Any such

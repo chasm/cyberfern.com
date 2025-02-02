@@ -4,6 +4,7 @@ import "./styles/local.css"
 interface Props {
 	meta: {
 		description: string
+		robots?: string[]
 		title: string
 	}
 }
@@ -11,6 +12,8 @@ interface Props {
 const { meta } = Astro.props
 
 const isHome = Astro.url.pathname.length < 2
+
+const { description, robots = ["index", "follow"], title } = meta
 ---
 
 <!doctype html>
@@ -19,7 +22,7 @@ const isHome = Astro.url.pathname.length < 2
 		<meta charset="UTF-8" />
 		<meta
 			name="description"
-			content={meta.description}
+			content={description}
 		/>
 		<meta
 			name="viewport"
@@ -31,7 +34,7 @@ const isHome = Astro.url.pathname.length < 2
 		/>
 		<meta
 			name="robots"
-			content="index, follow"
+			content={robots.join(", ")}
 		/>
 		<meta
 			name="author"
@@ -42,7 +45,7 @@ const isHome = Astro.url.pathname.length < 2
 			type="image/svg+xml"
 			href="/favicon.svg"
 		/>
-		<title>{meta.title}</title>
+		<title>{title}</title>
 	</head>
 	<body>
 		<header>

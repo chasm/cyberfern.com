@@ -1,14 +1,17 @@
 ---
+import "../../layouts/styles/legal.css"
+
 import Layout from "../../layouts/index.astro"
 
 const meta = {
 	description: "CyberFern.com privacy policy",
+	robots: ["noindex", "nofollow"],
 	title: "Privacy policy :: CyberFern.com",
 }
 ---
 
 <Layout {meta}>
-	<main>
+	<main class="privacy-policy">
 		<article class="page">
 			<h1>Privacy Policy</h1>
 			<p>

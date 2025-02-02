@@ -1,12 +1,18 @@
 ---
 import Layout from "../layouts/index.astro"
 
+import collapseWhitespace from "../utilities/collapseWhitespace"
+
 const ellip = ` … `
 const md = " — "
 
 const meta = {
-	description:
-		"At CyberFern, we guide startups to build strong, secure, and resilient foundations without breaking the bank. Our practical, straightforward approach helps you to understand and address your security needs, so you can focus on growing your business.",
+	description: collapseWhitespace(`
+		At CyberFern, we guide startups to build strong, secure, and
+		resilient foundations without breaking the bank. Our practical,
+		straightforward approach helps you to understand and address
+		your security needs, so you can focus on growing your business.
+	`),
 	title: "Cyberfern.com | Free Startup Security Consultation",
 }
 ---

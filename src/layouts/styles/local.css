@@ -461,11 +461,13 @@
 	footer > nav.supplemental a:focus,
 	footer > nav.supplemental a:visited:focus,
 	footer > nav.supplemental a:hover,
-	footer > nav.supplemental a:visited:hover {
+	footer > nav.supplemental a:visited:hover,
+	footer > nav.supplemental span.this-page {
 		border-radius: 5px;
 		color: var(--color-highlight);
 		outline-offset: 5px;
 		outline: 1px solid var(--color-highlight);
+		text-transform: uppercase;
 	}
 
 	footer > .contact-info {

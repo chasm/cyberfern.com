@@ -35,6 +35,7 @@
 
 	main.privacy-policy article.page > *,
 	main.terms-of-use article.page > * {
+		margin-inline-end: 6svw;
 		max-width: 48rem;
 	}
 

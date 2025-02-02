@@ -11,7 +11,9 @@ interface Props {
 
 const { meta } = Astro.props
 
-const isHome = Astro.url.pathname.length < 2
+const { pathname } = Astro.url
+
+const isHome = pathname.length < 2
 
 const { description, robots = ["index", "follow"], title } = meta
 ---
@@ -28,9 +30,9 @@ const { description, robots = ["index", "follow"], title } = meta
 			name="viewport"
 			content="width=device-width"
 		/>
-		<meta
-			name="canonical"
-			content={Astro.url}
+		<link
+			href={Astro.url}
+			rel="canonical"
 		/>
 		<meta
 			name="robots"
@@ -38,6 +40,10 @@ const { description, robots = ["index", "follow"], title } = meta
 		/>
 		<meta
 			name="author"
+			content="Anna Lezhikova"
+		/>
+		<meta
+			name="publisher"
 			content="Anna Lezhikova"
 		/>
 		<link
@@ -69,10 +75,18 @@ const { description, robots = ["index", "follow"], title } = meta
 			<nav>
 				<ul>
 					<li>
-						<a href="/#about">About</a>
+						<a
+							href="/#about"
+							title="About CyberFern.com."
+							>About</a
+						>
 					</li>
 					<li>
-						<a href="#contact">Contact</a>
+						<a
+							href="#contact"
+							title="Contact CyberFern.com."
+							>Contact</a
+						>
 					</li>
 				</ul>
 			</nav>
@@ -83,10 +97,44 @@ const { description, robots = ["index", "follow"], title } = meta
 			<nav class="supplemental">
 				<ul>
 					<li>
-						<a href="/privacy-policy">Privacy</a>
+						{
+							pathname === "/privacy-policy" ? (
+								<span
+									aria-current
+									class="this-page"
+									title="This page."
+								>
+									Privacy
+								</span>
+							) : (
+								<a
+									href="/privacy-policy"
+									title="Our privacy policy"
+								>
+									Privacy
+								</a>
+							)
+						}
 					</li>
 					<li>
-						<a href="/terms-of-use">Terms</a>
+						{
+							pathname === "/terms-of-use" ? (
+								<span
+									aria-current
+									class="this-page"
+									title="This page."
+								>
+									Terms
+								</span>
+							) : (
+								<a
+									href="/terms-of-use"
+									title="Our terms of use"
+								>
+									Terms
+								</a>
+							)
+						}
 					</li>
 				</ul>
 			</nav>
@@ -96,8 +144,16 @@ const { description, robots = ["index", "follow"], title } = meta
 			>
 				<h3 class="sr-only">Contact info</h3>
 				<span>Contact Anna:</span>
-				<a href="tel:+642102736163">+64 (0) 210 273 6163</a>
-				<a href="mailto:info@cyberfern.com">info@cyberfern.com</a>
+				<a
+					href="tel:+642102736163"
+					title="Call Anna"
+					>+64 (0) 210 273 6163</a
+				>
+				<a
+					href="mailto:info@cyberfern.com"
+					title="Email Anna"
+					>info@cyberfern.com</a
+				>
 			</section>
 		</footer>
 	</body>

@@ -3,10 +3,17 @@ import "../../layouts/styles/legal.css"
 
 import Layout from "../../layouts/index.astro"
 
+import collapseWhitespace from "~utilities/collapseWhitespace"
+
 const meta = {
-	description: "CyberFern.com privacy policy",
+	description: collapseWhitespace(`
+		Our privacy policy for the CyberFern.com web site.
+		Run by Anna Lezhikova, CyberFern is a company dedicated
+		to helping startups to ensure that their security is at
+		enterprise level despite being a startup.
+	`),
 	robots: ["noindex", "nofollow"],
-	title: "Privacy policy :: CyberFern.com",
+	title: "Privacy policy | CyberFern.com cyber security",
 }
 ---
 

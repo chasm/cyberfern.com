@@ -222,6 +222,10 @@
 		padding: 0;
 	}
 
+	body > header {
+		padding-block-end: 1rem;
+	}
+
 	body > header .logo {
 		display: flex;
 		gap: 2rem;
@@ -281,6 +285,12 @@
 	h2 {
 		font-size: var(--step-3);
 		font-weight: 600;
+		padding-block-start: 3rem;
+	}
+
+	.why h2,
+	.about h2 {
+		padding-block-start: 0;
 	}
 
 	h3 {

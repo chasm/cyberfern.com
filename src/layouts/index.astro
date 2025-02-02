@@ -2,10 +2,13 @@
 import "./styles/local.css"
 
 interface Props {
-	title: string
+	meta: {
+		description: string
+		title: string
+	}
 }
 
-const { title } = Astro.props
+const { meta } = Astro.props
 
 const isHome = Astro.url.pathname.length < 2
 ---
@@ -16,18 +19,30 @@ const isHome = Astro.url.pathname.length < 2
 		<meta charset="UTF-8" />
 		<meta
 			name="description"
-			content="The Cyberfern.com website."
+			content={meta.description}
 		/>
 		<meta
 			name="viewport"
 			content="width=device-width"
+		/>
+		<meta
+			name="canonical"
+			content={Astro.url}
+		/>
+		<meta
+			name="robots"
+			content="index, follow"
+		/>
+		<meta
+			name="author"
+			content="Anna Lezhikova"
 		/>
 		<link
 			rel="icon"
 			type="image/svg+xml"
 			href="/favicon.svg"
 		/>
-		<title>{title}</title>
+		<title>{meta.title}</title>
 	</head>
 	<body>
 		<header>

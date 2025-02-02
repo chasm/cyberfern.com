@@ -31,35 +31,33 @@ const isHome = Astro.url.pathname.length < 2
 	</head>
 	<body>
 		<header>
-			<div>
-				<div class="logo">
-					<p>
-						{
-							isHome ? (
-								"CyberFern"
-							) : (
-								<a
-									href="/"
-									title="To the home page."
-								>
-									CyberFern
-								</a>
-							)
-						}
-					</p>
-					<address>Wellington, New Zealand</address>
-				</div>
-				<nav>
-					<ul>
-						<li>
-							<a href="/#about">About</a>
-						</li>
-						<li>
-							<a href="#contact">Contact</a>
-						</li>
-					</ul>
-				</nav>
+			<div class="logo">
+				<p>
+					{
+						isHome ? (
+							"CyberFern"
+						) : (
+							<a
+								href="/"
+								title="To the home page."
+							>
+								CyberFern
+							</a>
+						)
+					}
+				</p>
+				<address>Wellington, New Zealand</address>
 			</div>
+			<nav>
+				<ul>
+					<li>
+						<a href="/#about">About</a>
+					</li>
+					<li>
+						<a href="#contact">Contact</a>
+					</li>
+				</ul>
+			</nav>
 		</header>
 		<slot />
 		<footer>

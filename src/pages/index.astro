@@ -1,109 +1,96 @@
 ---
 import Layout from "../layouts/index.astro"
+
+const ellip = ` … `
+const md = " — "
 ---
 
 <Layout title="CyberFern.com">
 	<main>
 		<section class="hero">
-			<div>
-				<div class="hero-text">
-					<h1>Fostering Cyber Resilience</h1>
-					<p>
-						Welcome to CyberFern, where we empower your business providing
-						expert guidance in cyber resilience, cyber intelligence, cyber risk
-						assessment and management. We will help you to navigate your
-						business securely through the modern digital landscape. Let&rsquo;s
-						build a safer future together.
-					</p>
-					<p>
-						Let&rsquo;s talk!
-						<a
-							class="button"
-							href="https://calendly.com/annalezhikova-ne7b/cybersecruitychat"
-							rel="external"
-							>Book a chat</a
-						>
-					</p>
-				</div>
-				<div class="hero-image">
-					<img
-						alt=""
-						height="4480"
-						src="/images/ferns.jpg"
-						width="6720"
-					/>
-				</div>
+			<div class="hero-text">
+				<header>
+					<h1>
+						You grow your business{ellip}<br />We build your cyber-resilience
+					</h1>
+				</header>
+				<p>Starting up is hard enough without worrying about cybersecurity.</p>
+				<p>
+					At CyberFern, we guide startups to build strong, secure, and resilient
+					foundations without breaking the bank. Our practical, straightforward
+					approach helps you to understand and address your security needs, so
+					you can focus on <em>growing your business</em>.
+				</p>
+				<p class="lets-talk">
+					<span>Let’s talk!</span>
+					<a
+						class="button"
+						href="https://calendly.com/annalezhikova-ne7b/cybersecruitychat"
+						rel="external"
+						>FREE STARTUP SECURITY CONSULTATION</a
+					>
+				</p>
+				<p>
+					No pressure, no technical jargon{md}just straightforward guidance to
+					help your startup grow securely
+				</p>
+			</div>
+			<div class="hero-image">
+				<img
+					alt=""
+					height="450"
+					src="/images/ferns.jpg"
+					width="675"
+				/>
 			</div>
 		</section>
 		<section class="what">
 			<header>
 				<h2>What We Do</h2>
 			</header>
-			<div class="cards">
-				<div class="card">
-					<img
-						alt=""
-						height="2333"
-						src="/images/risk-management.jpg"
-						width="3500"
-					/>
-					<h3>Risk management</h3>
-					<p>
-						Manage your cybersecurity risks effectively. Gain control and
-						protect your digital assets with our expert guidance. Strengthen
-						your defenses against online threats now.
-					</p>
-				</div>
-				<div class="card">
-					<img
-						alt=""
-						height="3500"
-						src="/images/assessments.jpg"
-						width="2333"
-					/>
-					<h3>Assessments</h3>
-					<p>
-						Get ready for cybersecurity assessments and certifications. Follow
-						<a
-							href="https://www.nist.gov/"
-							rel="external"
-							title="National Institute of Standards and Technology"
-							>NIST</a
-						>,
-						<a
-							href="https://www.nzism.org/"
-							rel="external"
-							title="New Zealand Institute of Safety Management"
-							>NZISM</a
-						>,
-						<a
-							href="https://www.cisecurity.org/"
-							rel="external"
-							title="Center for Internet Security"
-							>CIS</a
-						>, and
-						<a
-							href="https://www.iso.org/standard/iso-iec-27000-family"
-							rel="external"
-							title="International Organization for Standardization ISO/IEC 27000 family"
-							>ISO27K</a
-						> standards. Ensure compliance and protection for your digital assets.
-					</p>
-				</div>
-				<div class="card">
-					<img
-						alt=""
-						height="3500"
-						src="/images/training.jpg"
-						width="2333"
-					/>
-					<h3>Training</h3>
-					<p>
-						Boost cyber defense with tailored awareness campaigns, relevant
-						newsletters, tabletop drills, and incident response workshops.
-						Strengthen your team today.
-					</p>
-				</div>
+			<div class="card one">
+				<img
+					alt=""
+					height="300"
+					src="/images/risk-management.jpg"
+					width="450"
+				/>
+				<h3>Assess your cyber risks</h3>
+				<p>
+					<strong>Know Where You Stand</strong>. We’ll review your current setup
+					and identify what matters most for your startup’s security. Simple,
+					practical, and focused on your actual risks.
+				</p>
+			</div>
+			<div class="card two">
+				<img
+					alt=""
+					height="300"
+					src="/images/assessments.jpg"
+					width="450"
+				/>
+				<h3>Build a roadmap</h3>
+				<p>
+					<strong>Clear Steps Forward</strong>. Get a realistic plan that fits
+					your budget and growth stage. We prioritise what’s crucial now and
+					what can wait, so you can make informed decisions about your security
+					investments.
+				</p>
+			</div>
+			<div class="card three">
+				<img
+					alt=""
+					height="300"
+					src="/images/training.jpg"
+					width="450"
+				/>
+				<h3>Get help with implementation</h3>
+				<p>
+					<strong>Hands-On Support</strong>. Need help putting the plan into
+					action? We’re here to guide you through each step, from setting up
+					basic protections to training your team. No stress{md}just steady
+					progress toward better security.
+				</p>
 			</div>
 		</section>
 		<div class="why">
@@ -111,33 +98,41 @@ import Layout from "../layouts/index.astro"
 				<h2>Why Choose Us?</h2>
 			</heading>
 			<p>
-				We use a holistic approach, integrating people, processes, and
-				technology—human-centric and business-oriented solutions for robust
-				cybersecurity.
+				Like the native ferns of New Zealand, we believe in supporting growth
+				from the ground up. We’re passionate about <strong
+					>helping startups lay down strong roots{md}with</strong
+				> practical, budget-conscious security solutions focused on what matters
+				most.
+			</p>
+			<p>
+				What makes us different is our <strong>holistic vision</strong> of cybersecurity.
+				We know that effective security isn’t just about technology{md}it’s
+				about how your people work, how your processes flow, and how your
+				business grows. By
+				<strong>integrating</strong> all these elements, we create solutions that
+				truly fit your startup’s reality and support your journey from day one.
 			</p>
 		</div>
 	</main>
-	<section
+	<aside
 		id="about"
 		class="about"
 	>
 		<header>
 			<h2>About CyberFern</h2>
 		</header>
-		<div>
-			<div class="about-content">
-				<p>CyberFern was founded by Anna Lezhikova.</p>
-				<p>
-					She has over 20 years of experience in communications, business
-					management, software development, DevOps, and DevSecOps. She
-					understands not only the technology, but also people and processes:
-					the triad of good cybersecurity.
-				</p>
-				<p>
-					Let&rsquo;s work together to protect what matters most to you and your
-					organisation.
-				</p>
-			</div>
+		<div class="about-content">
+			<p>CyberFern was founded by Anna Lezhikova.</p>
+			<p>
+				She has more than twenty years of experience in communications, business
+				management, software development, DevOps, and DevSecOps. She understands
+				not only the technology, but also people and processes: the triad of
+				good cybersecurity.
+			</p>
+			<p>
+				Let&rsquo;s work together to protect what matters most to you and your
+				organisation.
+			</p>
 		</div>
-	</section>
+	</aside>
 </Layout>

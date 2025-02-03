@@ -99,7 +99,7 @@
 	}
 
 	main .hero-text {
-		grid-column: col-start / span 6;
+		grid-column: col-start / span 7;
 	}
 
 	main .hero-text p {
@@ -107,7 +107,7 @@
 	}
 
 	main .hero-image {
-		grid-column: col-start 7 / span 6;
+		grid-column: col-start 8 / span 5;
 	}
 
 	main .what {
@@ -380,12 +380,18 @@
 		flex-direction: column;
 		justify-content: flex-end;
 		overflow: hidden;
+		max-height: 600px;
+	}
+
+	.hero-image picture {
+		height: 100%;
 	}
 
 	.hero-image img {
+		width: auto;
 		height: 100%;
 		object-fit: cover;
-		width: auto;
+		object-position: center;
 	}
 
 	.card h3 {
@@ -505,7 +511,7 @@
 }
 
 @layer responsive {
-	@media (width <= 96rem) {
+	@media (width <= 86rem) {
 		body {
 			grid-template-columns:
 				[screen-start] 3svw repeat(18, [col-start] 1fr)
@@ -564,6 +570,8 @@
 
 		main .hero-image img {
 			max-height: 25svh;
+			object-fit: cover;
+			width: 100%;
 		}
 
 		main .what > header {

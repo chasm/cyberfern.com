@@ -1,6 +1,7 @@
 :root {
-	--color-light: #fcfbf0;
-	--color-shaded: #e2e1cf;
+	--color-light: hsl(55, 67%, 96%);
+	--color-middle: hsl(57, 45%, 91%);
+	--color-shaded: hsl(57, 25%, 85%);
 	--color-dark: #134e31;
 	--color-highlight: #ffe900;
 	--color-link: oklch(45% 0.157 247deg);
@@ -265,7 +266,7 @@
 	}
 
 	main .why {
-		background-color: var(--color-light);
+		background-color: var(--color-middle);
 		color: var(--color-dark);
 		padding-block: var(--space-l);
 	}
@@ -422,11 +423,12 @@
 
 	a.button,
 	a.button:visited {
-		border: 2px solid var(--color-highlight);
+		background-color: var(--color-highlight);
+		border: 2px solid var(--color-dark);
+		color: var(--color-dark);
 		border-radius: 5px;
-		color: var(--color-highlight);
+		font-weight: 500;
 		display: inline-block;
-		margin-inline-start: 1rem;
 		padding: 0.5rem 1rem;
 		text-decoration: none;
 	}
@@ -435,9 +437,13 @@
 	a.button:visited:focus,
 	a.button:hover,
 	a.button:visited:hover {
-		background-color: var(--color-highlight);
-		border: 2px solid var(--color-dark);
-		color: var(--color-dark);
+		background-color: var(--color-dark);
+		border: 2px solid var(--color-highlight);
+		color: var(--color-highlight);
+	}
+
+	span.highlight {
+		color: var(--color-highlight);
 	}
 
 	body > footer {
@@ -499,7 +505,7 @@
 }
 
 @layer responsive {
-	@media (width <= 100rem) {
+	@media (width <= 96rem) {
 		body {
 			grid-template-columns:
 				[screen-start] 3svw repeat(18, [col-start] 1fr)

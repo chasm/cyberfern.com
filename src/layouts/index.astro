@@ -93,7 +93,10 @@ const { description, robots = ["index", "follow"], title } = meta
 		<slot />
 		<footer>
 			<h2 class="sr-only">Supplemental information</h2>
-			<nav class="supplemental">
+			<nav
+				aria-label="Supplemental navigation"
+				class="supplemental"
+			>
 				<ul>
 					<li>
 						{

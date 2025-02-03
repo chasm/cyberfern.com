@@ -442,7 +442,7 @@
 		color: var(--color-highlight);
 	}
 
-	span.highlight {
+	.highlight {
 		color: var(--color-highlight);
 	}
 

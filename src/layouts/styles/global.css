@@ -138,24 +138,40 @@
 		grid-column: col-start 9 / span 4;
 	}
 
-	main .why {
+	main .why,
+	main .testimonials {
 		display: grid;
 		grid-column: screen-start / screen-end;
 		grid-template-columns: subgrid;
 		grid-template-rows: min-content min-content auto;
 	}
 
-	.why p,
 	.about p {
 		max-width: 70rem;
 	}
 
-	main .why heading {
+	main .why heading,
+	main .testimonials heading {
 		grid-column: col-start / span 4;
+		max-width: 70rem;
+		margin-block: 0 var(--space-m);
+		padding: 0;
 	}
 
-	main .why p {
+	main .why h2,
+	main .testimonials h2 {
+		margin-block: 0;
+	}
+
+	main .why > div,
+	main .testimonials > div {
 		grid-column: col-start 5 / span 8;
+	}
+
+	main .why p,
+	main .testimonials p {
+		margin: 0;
+		padding-block-end: var(--space-m);
 	}
 
 	body > aside {
@@ -213,7 +229,12 @@
 	body {
 		background-color: var(--color-dark);
 		color: var(--color-light);
-		font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro,
+		font-family:
+			Avenir,
+			Montserrat,
+			Corbel,
+			"URW Gothic",
+			source-sans-pro,
 			sans-serif;
 		font-size: var(--step-0);
 		font-weight: 300;
@@ -265,7 +286,8 @@
 		color: var(--color-dark);
 	}
 
-	main .why {
+	main .why,
+	main .testimonials {
 		background-color: var(--color-middle);
 		color: var(--color-dark);
 		padding-block: var(--space-l);
@@ -290,6 +312,7 @@
 	}
 
 	.why h2,
+	.testimonials h2,
 	.about h2 {
 		padding-block-start: 0;
 	}
@@ -590,18 +613,21 @@
 			grid-column: col-start 13 / span 6;
 		}
 
-		main .why {
+		main .why,
+		main .testimonials {
 			display: grid;
 			grid-column: screen-start / screen-end;
 			grid-template-columns: subgrid;
 			grid-template-rows: min-content min-content auto;
 		}
 
-		main .why heading {
+		main .why heading,
+		main .testimonials heading {
 			grid-column: col-start / span 6;
 		}
 
-		main .why p {
+		main .why p,
+		main .testimonials p {
 			grid-column: col-start 7 / span 12;
 		}
 
@@ -708,12 +734,15 @@
 		main .three,
 		main .why heading,
 		main .why p,
+		main .testimonials heading,
+		main .testimonials p,
 		body > aside.about header,
 		body > aside.about .about-content {
 			grid-column: col-start / span 18;
 		}
 
 		.why h2,
+		.testimonials h2,
 		.about h2 {
 			margin-block: 0;
 			padding-block: var(--space-l) var(--space-xs);

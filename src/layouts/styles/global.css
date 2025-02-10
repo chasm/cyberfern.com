@@ -281,13 +281,14 @@
 		font-weight: 300;
 	}
 
-	main .what {
+	main .what,
+	main .testimonials {
 		background-color: var(--color-light);
 		color: var(--color-dark);
+		padding-block: var(--space-l);
 	}
 
-	main .why,
-	main .testimonials {
+	main .why {
 		background-color: var(--color-middle);
 		color: var(--color-dark);
 		padding-block: var(--space-l);

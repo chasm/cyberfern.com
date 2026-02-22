@@ -13,9 +13,37 @@ const meta = {
 	`),
 	title: "About Anna Lezhikova | CyberFern",
 }
+
+const schema = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	"name": "Anna Lezhikova",
+	"url": "https://cyberfern.com/about/",
+	"jobTitle": "Cybersecurity Consultant",
+	"worksFor": {
+		"@type": "Organization",
+		"name": "CyberFern",
+		"url": "https://cyberfern.com",
+	},
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Wellington",
+		"addressCountry": "NZ",
+	},
+	"sameAs": ["https://www.linkedin.com/in/annalezhikova/"],
+	"knowsAbout": [
+		"Cybersecurity",
+		"DevSecOps",
+		"Security Champions",
+		"Cyber Risk Management",
+	],
+}
 ---
 
-<Layout {meta}>
+<Layout
+	{meta}
+	{schema}
+>
 	<main id="main-content">
 		<section class="hero">
 			<div class="hero-text">
@@ -52,7 +80,7 @@ const meta = {
 						type="image/webp"
 					/>
 					<img
-						alt=""
+						alt="Native New Zealand fern fronds"
 						height="450"
 						src="/images/hero.jpg"
 						width="675"

@@ -13,9 +13,27 @@ const meta = {
 	`),
 	title: "Security Champions Programme | CyberFern",
 }
+
+const schema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"name": "Security Champions Programme",
+	"description": meta.description,
+	"url": "https://cyberfern.com/champions/",
+	"provider": {
+		"@type": "Organization",
+		"name": "CyberFern",
+		"url": "https://cyberfern.com",
+	},
+	"serviceType": "Security Champions Programme",
+	"areaServed": [{ "@type": "Country", "name": "New Zealand" }, "Remote"],
+}
 ---
 
-<Layout {meta}>
+<Layout
+	{meta}
+	{schema}
+>
 	<main id="main-content">
 		<section class="hero">
 			<div class="hero-text">
@@ -52,7 +70,7 @@ const meta = {
 						type="image/webp"
 					/>
 					<img
-						alt=""
+						alt="Native New Zealand fern fronds"
 						height="450"
 						src="/images/hero.jpg"
 						width="675"

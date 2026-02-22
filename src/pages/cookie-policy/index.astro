@@ -1,0 +1,37 @@
+---
+import "~layouts/styles/legal.css"
+
+import Layout from "~layouts/index.astro"
+
+const meta = {
+	description:
+		"CyberFern cookie policy. This site does not use cookies or tracking technologies.",
+	robots: ["noindex", "nofollow"],
+	title: "Cookie Policy | CyberFern",
+}
+---
+
+<Layout {meta}>
+	<main
+		id="main-content"
+		class="cookie-policy"
+	>
+		<article class="page">
+			<h1>Cookie Policy</h1>
+			<p>
+				This website does not use cookies, tracking pixels, or any other
+				tracking technologies. We do not collect behavioural data, run
+				analytics, or serve targeted advertising.
+			</p>
+			<p>
+				If this changes in the future, we will update this page and notify
+				visitors accordingly.
+			</p>
+			<p>
+				For more information about how we handle your data, see our <a
+					href="/privacy-policy/">privacy policy</a
+				>.
+			</p>
+		</article>
+	</main>
+</Layout>

@@ -14,9 +14,33 @@ const meta = {
 	`),
 	title: "Cybersecurity for Startups | CyberFern",
 }
+
+const schema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"name": "Cybersecurity for Startups",
+	"description": meta.description,
+	"url": "https://cyberfern.com/startups/",
+	"provider": {
+		"@type": "Organization",
+		"name": "CyberFern",
+		"url": "https://cyberfern.com",
+	},
+	"serviceType": "Cybersecurity Consulting",
+	"areaServed": [{ "@type": "Country", "name": "New Zealand" }, "Remote"],
+	"offers": {
+		"@type": "Offer",
+		"price": "0",
+		"priceCurrency": "NZD",
+		"description": "Free one-hour cybersecurity consultation",
+	},
+}
 ---
 
-<Layout {meta}>
+<Layout
+	{meta}
+	{schema}
+>
 	<main id="main-content">
 		<section class="hero">
 			<div class="hero-text">
@@ -56,7 +80,7 @@ const meta = {
 						type="image/webp"
 					/>
 					<img
-						alt=""
+						alt="Native New Zealand fern fronds"
 						height="450"
 						src="/images/hero.jpg"
 						width="675"
@@ -79,7 +103,7 @@ const meta = {
 						type="image/webp"
 					/>
 					<img
-						alt=""
+						alt="Hands holding soil, representing cybersecurity risk assessment"
 						height="300"
 						src="/images/assess-your-cyber-risks.jpg"
 						width="450"
@@ -103,7 +127,7 @@ const meta = {
 						type="image/webp"
 					/>
 					<img
-						alt=""
+						alt="Seedlings growing in rows, representing a planned security roadmap"
 						height="300"
 						src="/images/build-a-roadmap.jpg"
 						width="450"
@@ -128,7 +152,7 @@ const meta = {
 						type="image/webp"
 					/>
 					<img
-						alt=""
+						alt="Young plants in pots, representing hands-on security implementation"
 						height="300"
 						src="/images/get-help-with-implementation.jpg"
 						width="450"

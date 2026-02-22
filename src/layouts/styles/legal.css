@@ -27,12 +27,14 @@
 		margin-block-start: 0;
 	}
 
+	main.cookie-policy article.page,
 	main.privacy-policy article.page,
 	main.terms-of-use article.page {
 		grid-column: col-start / screen-end;
 		padding-block: 6rem;
 	}
 
+	main.cookie-policy article.page > *,
 	main.privacy-policy article.page > *,
 	main.terms-of-use article.page > * {
 		margin-inline-end: 6svw;

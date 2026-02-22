@@ -1,0 +1,41 @@
+---
+import Layout from "~layouts/index.astro"
+
+const meta = {
+	description:
+		"Page not found. Return to CyberFern to explore our cybersecurity services.",
+	robots: ["noindex", "nofollow"],
+	title: "Page Not Found | CyberFern",
+}
+---
+
+<Layout {meta}>
+	<main id="main-content">
+		<section class="hero">
+			<div class="hero-text">
+				<header>
+					<h1>Page not found</h1>
+				</header>
+				<p>The page you're looking for doesn't exist or has been moved.</p>
+				<p>Here are some places to start:</p>
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/startups/">Cybersecurity for Startups</a></li>
+					<li>
+						<a href="/small-businesses/">Cybersecurity for Small Businesses</a>
+					</li>
+					<li><a href="/workshops/">Training Workshops</a></li>
+					<li><a href="/champions/">Security Champions Programme</a></li>
+					<li><a href="/about/">About CyberFern</a></li>
+				</ul>
+				<p class="lets-talk">
+					<a
+						class="button"
+						href="mailto:info@cyberfern.com"
+						>GET IN TOUCH</a
+					>
+				</p>
+			</div>
+		</section>
+	</main>
+</Layout>

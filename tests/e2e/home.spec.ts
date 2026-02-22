@@ -10,10 +10,8 @@ const BASE = "http://localhost:4321"
  *
  * - color-contrast-enhanced: link colour #0057a6 on #fcfbf0 gives
  *   6.93:1 contrast — passes AA but fails AAA enhanced (7:1).
- * - link-name: testimonial logo links (mypam, ezidocs) contain only
- *   decorative images (alt="") with no other accessible text.
  */
-const KNOWN_VIOLATIONS = ["color-contrast-enhanced", "link-name"]
+const KNOWN_VIOLATIONS = ["color-contrast-enhanced"]
 
 test.describe("Home page", () => {
 	test("loads with 200 status", async ({ page }) => {

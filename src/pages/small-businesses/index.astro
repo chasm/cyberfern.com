@@ -14,9 +14,33 @@ const meta = {
 	`),
 	title: "Cybersecurity for Small Businesses | CyberFern",
 }
+
+const schema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"name": "Cybersecurity for Small Businesses",
+	"description": meta.description,
+	"url": "https://cyberfern.com/small-businesses/",
+	"provider": {
+		"@type": "Organization",
+		"name": "CyberFern",
+		"url": "https://cyberfern.com",
+	},
+	"serviceType": "Cybersecurity Consulting",
+	"areaServed": [{ "@type": "Country", "name": "New Zealand" }, "Remote"],
+	"offers": {
+		"@type": "Offer",
+		"price": "0",
+		"priceCurrency": "NZD",
+		"description": "Free one-hour cybersecurity consultation",
+	},
+}
 ---
 
-<Layout {meta}>
+<Layout
+	{meta}
+	{schema}
+>
 	<main id="main-content">
 		<section class="hero">
 			<div class="hero-text">
@@ -58,7 +82,7 @@ const meta = {
 						type="image/webp"
 					/>
 					<img
-						alt=""
+						alt="Native New Zealand fern fronds"
 						height="450"
 						src="/images/hero.jpg"
 						width="675"

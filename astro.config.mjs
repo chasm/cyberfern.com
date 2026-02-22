@@ -3,6 +3,7 @@ import { defineConfig } from "astro/config"
 import sitemap from "@astrojs/sitemap"
 
 const ignore = [
+	"https://cyberfern.com/cookie-policy/",
 	"https://cyberfern.com/privacy-policy/",
 	"https://cyberfern.com/terms-of-use/",
 ]

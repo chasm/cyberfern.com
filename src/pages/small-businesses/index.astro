@@ -1,0 +1,143 @@
+---
+import Layout from "~layouts/index.astro"
+
+import collapseWhitespace from "~utilities/collapseWhitespace"
+
+const ellip = ` … `
+const md = " — "
+
+const meta = {
+	description: collapseWhitespace(`
+		CyberFern helps small businesses protect what matters without
+		the jargon. Book a free one-hour consultation to understand
+		your real risks and where to start.
+	`),
+	title: "Cybersecurity for Small Businesses | CyberFern",
+}
+---
+
+<Layout {meta}>
+	<main id="main-content">
+		<section class="hero">
+			<div class="hero-text">
+				<header>
+					<h1>
+						Protecting your business{ellip}<br />doesn't have to be complicated
+					</h1>
+				</header>
+				<p>
+					You've worked hard to build your business. You shouldn't have to
+					become a cybersecurity expert to keep it safe.
+				</p>
+				<p>
+					At CyberFern, we help small business owners understand their real
+					risks and take sensible steps to protect what matters{md}their
+					customers, their reputation, and their livelihood.
+				</p>
+				<p class="lets-talk">
+					<a
+						class="button"
+						href="https://calendly.com/admin-cyberfern/free-consultation-with-cyberfern"
+						rel="external"
+						>FREE SMALL BUSINESS CONSULTATION</a
+					>
+				</p>
+				<p>
+					<span class="highlight">No jargon, no scare tactics.</span> Just honest,
+					practical advice you can act on.
+				</p>
+			</div>
+			<div class="hero-image">
+				<picture>
+					<source
+						srcset="/images/hero.avif"
+						type="image/avif"
+					/>
+					<source
+						srcset="/images/hero.webp"
+						type="image/webp"
+					/>
+					<img
+						alt=""
+						height="450"
+						src="/images/hero.jpg"
+						width="675"
+					/>
+				</picture>
+			</div>
+		</section>
+		<section class="what audiences">
+			<header>
+				<h2>Common Misconceptions</h2>
+			</header>
+			<div class="card one">
+				<h3>"We're too small to be a target"</h3>
+				<p>
+					Small businesses are actually targeted more often than large ones,
+					because attackers know they usually have weaker defences. You don't
+					need to be a big name to lose money, data, or customer trust.
+				</p>
+			</div>
+			<div class="card two">
+				<h3>"We outsource our IT"</h3>
+				<p>
+					Having an IT provider doesn't mean your security is covered. Most IT
+					support focuses on keeping things running{md}not on protecting you
+					from threats. It's worth knowing what's actually included and what
+					gaps remain.
+				</p>
+			</div>
+			<div class="card three">
+				<h3>"We're not really digital"</h3>
+				<p>
+					If you use email, process payments, or store customer details, you're
+					more digital than you think. A single compromised inbox or leaked
+					spreadsheet can cause real harm to your business and your customers.
+				</p>
+			</div>
+			<div class="card four">
+				<h3>"We'll deal with it later"</h3>
+				<p>
+					The longer you wait, the more you're leaving to chance. A few simple
+					steps now can prevent the kind of problems that are far more expensive{
+						md
+					}and stressful{md}to fix after the fact.
+				</p>
+			</div>
+			<p class="lets-talk">
+				<a
+					class="button"
+					href="https://calendly.com/admin-cyberfern/free-consultation-with-cyberfern"
+					rel="external"
+					>BOOK YOUR FREE CONSULTATION</a
+				>
+			</p>
+		</section>
+		<section class="expect">
+			<header>
+				<h2>What to Expect</h2>
+			</header>
+			<div>
+				<p>
+					Your free one-hour consultation is a relaxed, no-pressure conversation
+					about where your business stands today. Anna has helped businesses of
+					all sizes, and she understands that most owners just want to know: "Am
+					I doing enough?"
+				</p>
+				<p>
+					In that hour, you'll get a plain-language picture of your biggest
+					risks, practical advice on what to do first, and honest answers to
+					your questions{md}whether that involves CyberFern or not.
+				</p>
+				<p class="lets-talk">
+					<a
+						class="button"
+						href="https://calendly.com/admin-cyberfern/free-consultation-with-cyberfern"
+						rel="external"
+						>BOOK YOUR FREE CONSULTATION</a
+					>
+				</p>
+			</div>
+		</section>
+	</main>
+</Layout>

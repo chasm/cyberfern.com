@@ -22,3 +22,7 @@ coverage/
 docs/*
 temp/*
 .vercel
+
+# Playwright
+test-results/
+playwright-report/

@@ -4,6 +4,8 @@ import "./styles/global.css"
 interface Props {
 	meta: {
 		description: string
+		ogImage?: string
+		ogType?: string
 		robots?: string[]
 		title: string
 	}
@@ -15,7 +17,48 @@ const { pathname } = Astro.url
 
 const isHome = pathname.length < 2
 
-const { description, robots = ["index", "follow"], title } = meta
+const {
+	description,
+	ogImage = "/og-image.png",
+	ogType = "website",
+	robots = ["index", "follow"],
+	title,
+} = meta
+
+const siteOrigin = Astro.site?.origin ?? "https://cyberfern.com"
+const ogUrl = `${siteOrigin}${Astro.url.pathname}`
+const ogImageAbsolute = `${siteOrigin}${ogImage}`
+
+const navItems = [
+	{
+		label: "Startups",
+		href: "/startups/",
+		title: "Cybersecurity for startups.",
+	},
+	{
+		label: "Small Businesses",
+		href: "/small-businesses/",
+		title: "Cybersecurity for small businesses.",
+	},
+	{
+		label: "Workshops",
+		href: "/workshops/",
+		title: "Cybersecurity training workshops.",
+	},
+	{
+		label: "Champions",
+		href: "/champions/",
+		title: "Security Champions programme.",
+	},
+	{ label: "About", href: "/about/", title: "About CyberFern." },
+	{ label: "Contact", href: "/contact/", title: "Contact CyberFern." },
+]
+
+function isActive(href: string): boolean {
+	const normPath = pathname.replace(/\/+$/, "") || "/"
+	const normHref = href.replace(/\/+$/, "") || "/"
+	return normPath === normHref
+}
 ---
 
 <!doctype html>
@@ -51,9 +94,68 @@ const { description, robots = ["index", "follow"], title } = meta
 			type="image/svg+xml"
 			href="/favicon.svg"
 		/>
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="/favicon.ico"
+			sizes="32x32"
+		/>
+		<link
+			rel="apple-touch-icon"
+			href="/apple-touch-icon.png"
+		/>
 		<title>{title}</title>
+
+		<!-- Open Graph -->
+		<meta
+			property="og:title"
+			content={title}
+		/>
+		<meta
+			property="og:description"
+			content={description}
+		/>
+		<meta
+			property="og:image"
+			content={ogImageAbsolute}
+		/>
+		<meta
+			property="og:url"
+			content={ogUrl}
+		/>
+		<meta
+			property="og:type"
+			content={ogType}
+		/>
+		<meta
+			property="og:site_name"
+			content="CyberFern"
+		/>
+
+		<!-- Twitter Card -->
+		<meta
+			name="twitter:card"
+			content="summary_large_image"
+		/>
+		<meta
+			name="twitter:title"
+			content={title}
+		/>
+		<meta
+			name="twitter:description"
+			content={description}
+		/>
+		<meta
+			name="twitter:image"
+			content={ogImageAbsolute}
+		/>
 	</head>
 	<body>
+		<a
+			class="skip-link"
+			href="#main-content"
+			>Skip to main content</a
+		>
 		<header>
 			<div class="logo">
 				<p>
@@ -71,38 +173,99 @@ const { description, robots = ["index", "follow"], title } = meta
 					}
 				</p>
 			</div>
-			<nav>
-				<ul>
-					<li>
-						<a
-							href="/#about"
-							title="About CyberFern.com."
-							>About</a
-						>
-					</li>
-					<li>
-						<a
-							href="#contact"
-							title="Contact CyberFern.com."
-							>Contact</a
-						>
-					</li>
+			<nav aria-label="Main navigation">
+				<ul class="nav-list">
+					{
+						navItems.map((item) =>
+							isActive(item.href) ? (
+								<li>
+									<span
+										aria-current="page"
+										class="this-page"
+										title="This page."
+									>
+										{item.label}
+									</span>
+								</li>
+							) : (
+								<li>
+									<a
+										href={item.href}
+										title={item.title}
+									>
+										{item.label}
+									</a>
+								</li>
+							),
+						)
+					}
 				</ul>
+				<details class="nav-mobile">
+					<summary aria-label="Open menu">Menu</summary>
+					<ul>
+						{
+							navItems.map((item) =>
+								isActive(item.href) ? (
+									<li>
+										<span
+											aria-current="page"
+											class="this-page"
+											title="This page."
+										>
+											{item.label}
+										</span>
+									</li>
+								) : (
+									<li>
+										<a
+											href={item.href}
+											title={item.title}
+										>
+											{item.label}
+										</a>
+									</li>
+								),
+							)
+						}
+					</ul>
+				</details>
 			</nav>
 		</header>
 		<slot />
 		<footer>
-			<h2 class="sr-only">Supplemental information</h2>
+			<h2 class="sr-only">Site footer</h2>
+			<p class="footer-tagline">
+				Cybersecurity made practical, proportionate, and human.
+			</p>
 			<nav
-				aria-label="Supplemental navigation"
+				aria-label="Footer navigation"
+				class="footer-nav"
+			>
+				<ul>
+					{
+						navItems.map((item) => (
+							<li>
+								<a
+									href={item.href}
+									title={item.title}
+								>
+									{item.label}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</nav>
+			<nav
+				aria-label="Legal"
 				class="supplemental"
 			>
 				<ul>
 					<li>
 						{
-							pathname === "/privacy-policy" ? (
+							isActive("/privacy-policy/") ? (
 								<span
-									aria-current
+									aria-current="page"
 									class="this-page"
 									title="This page."
 								>
@@ -110,7 +273,7 @@ const { description, robots = ["index", "follow"], title } = meta
 								</span>
 							) : (
 								<a
-									href="/privacy-policy"
+									href="/privacy-policy/"
 									title="Our privacy policy"
 								>
 									Privacy
@@ -120,9 +283,9 @@ const { description, robots = ["index", "follow"], title } = meta
 					</li>
 					<li>
 						{
-							pathname === "/terms-of-use" ? (
+							isActive("/terms-of-use/") ? (
 								<span
-									aria-current
+									aria-current="page"
 									class="this-page"
 									title="This page."
 								>
@@ -130,7 +293,7 @@ const { description, robots = ["index", "follow"], title } = meta
 								</span>
 							) : (
 								<a
-									href="/terms-of-use"
+									href="/terms-of-use/"
 									title="Our terms of use"
 								>
 									Terms
@@ -145,7 +308,6 @@ const { description, robots = ["index", "follow"], title } = meta
 				class="contact-info"
 			>
 				<h3 class="sr-only">Contact info</h3>
-				<strong class="highlight">Contact Anna:</strong>
 				<a
 					href="mailto:info@cyberfern.com"
 					title="Email Anna"

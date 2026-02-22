@@ -1,0 +1,166 @@
+---
+import Layout from "~layouts/index.astro"
+
+import collapseWhitespace from "~utilities/collapseWhitespace"
+
+const md = " — "
+
+const meta = {
+	description: collapseWhitespace(`
+		CyberFern's Security Champions Programme embeds security expertise
+		directly in your development teams. Accelerate delivery, reduce
+		risk, and bridge the gap between security and engineering.
+	`),
+	title: "Security Champions Programme | CyberFern",
+}
+---
+
+<Layout {meta}>
+	<main id="main-content">
+		<section class="hero">
+			<div class="hero-text">
+				<header>
+					<h1>Security Champions Programme</h1>
+				</header>
+				<p>
+					Your development teams are responsible for security, but they don't
+					have the training, the support, or the time to do it well. The result
+					is a constant choice between delivering fast and delivering securely.
+				</p>
+				<p>
+					CyberFern's Security Champions Programme removes that trade-off. We
+					embed security knowledge directly in your engineering teams through a
+					structured, tailored programme that builds lasting capability{md}not
+					just one-off awareness.
+				</p>
+				<p class="lets-talk">
+					<a
+						class="button"
+						href="mailto:info@cyberfern.com"
+						>DISCUSS YOUR PROGRAMME NEEDS</a
+					>
+				</p>
+			</div>
+			<div class="hero-image">
+				<picture>
+					<source
+						srcset="/images/hero.avif"
+						type="image/avif"
+					/>
+					<source
+						srcset="/images/hero.webp"
+						type="image/webp"
+					/>
+					<img
+						alt=""
+						height="450"
+						src="/images/hero.jpg"
+						width="675"
+					/>
+				</picture>
+			</div>
+		</section>
+		<section class="why">
+			<header>
+				<h2>The Challenge</h2>
+			</header>
+			<div>
+				<p>
+					Most organisations face the same problem: security teams are stretched
+					thin and can't be embedded in every project. Development teams,
+					meanwhile, face organisational resistance when introducing security
+					controls. Application security is rarely prioritised alongside feature
+					delivery.
+				</p>
+				<p>
+					The consequences are real{md}delayed releases, friction between teams,
+					and vulnerabilities that slip through to production. Fixing defects
+					discovered late in the lifecycle costs dramatically more than catching
+					them early.
+				</p>
+				<p>
+					A Security Champions Programme creates bridges between security,
+					development, and other business functions in a lasting way. By
+					selecting champions from within your development teams and giving them
+					the right support and recognition, you can ship more secure code,
+					reduce overall risk, and accelerate delivery.
+				</p>
+			</div>
+		</section>
+		<section class="testimonials">
+			<header>
+				<h2>How It Works</h2>
+			</header>
+			<div>
+				<p>
+					<strong>Discovery and planning.</strong> We work with your key sponsors
+					and stakeholders to identify the programme's goals and budget, set the timeline,
+					define metrics, and establish a baseline measurement.
+				</p>
+				<p>
+					<strong>Team selection and kickoff.</strong> We select teams to participate,
+					conduct an introductory meeting, and call for volunteers. Champions are
+					chosen from within your development teams{md}people who are motivated
+					and curious, not just assigned.
+				</p>
+				<p>
+					<strong>Goal setting.</strong> We work with your security function to define
+					tactical goals based on your current security plan, then run a brainstorming
+					workshop with the champions to determine how to achieve them.
+				</p>
+				<p>
+					<strong>Execution.</strong> The programme includes learning sessions, engagement
+					in external security events, and introducing or improving practices such
+					as threat modelling, vulnerability detection, and security controls implementation.
+				</p>
+				<p>
+					<strong>Measurement and iteration.</strong> We measure progress against
+					the defined metrics, compare with the baseline, and plan the next iteration
+					or expansion of the programme.
+				</p>
+				<p class="lets-talk">
+					<a
+						class="button"
+						href="mailto:info@cyberfern.com"
+						>TALK TO ANNA ABOUT YOUR PROGRAMME</a
+					>
+				</p>
+			</div>
+		</section>
+		<section class="expect">
+			<header>
+				<h2>Proven Results</h2>
+			</header>
+			<div>
+				<p>
+					<strong>Swiss Post and Log4Shell.</strong> Swiss Post began implementing
+					its Security Champions programme in 2020. Champions participated in Security
+					Day events, attended external training, and built strong relationships with
+					the security team. When the critical Log4Shell vulnerability emerged in
+					late 2021, the Security Champions identified and addressed the issue before
+					the official company-wide communication was even released.
+				</p>
+				<p>
+					<strong>Catching defects early.</strong> Research by the National Institute
+					of Standards and Technology shows that fixing a defect after deployment
+					can cost 30 times more than catching it during design. A Security Champions
+					programme equips teams with threat modelling skills, enabling them to identify
+					vulnerabilities during design rather than after a penetration test delays
+					a release by weeks.
+				</p>
+				<p>
+					At CyberFern, we combine first-hand development and deployment
+					experience with deep cybersecurity knowledge and human science. We
+					tailor every programme to meet your organisation's goals and budget.
+				</p>
+				<p class="lets-talk">
+					<a
+						class="button"
+						href="mailto:info@cyberfern.com"
+						>START YOUR PROGRAMME</a
+					>
+				</p>
+			</div>
+		</section>
+	</main>
+</Layout>

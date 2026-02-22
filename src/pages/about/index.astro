@@ -1,0 +1,152 @@
+---
+import Layout from "~layouts/index.astro"
+
+import collapseWhitespace from "~utilities/collapseWhitespace"
+
+const md = " — "
+
+const meta = {
+	description: collapseWhitespace(`
+		Meet Anna Lezhikova, founder of CyberFern. A cybersecurity consultant
+		based in Wellington, New Zealand, combining hands-on engineering
+		experience with a business and human science background.
+	`),
+	title: "About Anna Lezhikova | CyberFern",
+}
+---
+
+<Layout {meta}>
+	<main id="main-content">
+		<section class="hero">
+			<div class="hero-text">
+				<header>
+					<h1>About CyberFern</h1>
+				</header>
+				<p>
+					CyberFern is a cybersecurity consultancy founded by Anna Lezhikova,
+					based in Wellington, New Zealand. Anna helps organisations see
+					cybersecurity not as a technical burden, but as a strategic enabler of
+					growth and resilience.
+				</p>
+				<p>
+					Whether you're a startup founder unsure where to begin, a small
+					business owner worried about the basics, or a CTO looking to embed
+					security across your engineering teams{md}Anna speaks your language.
+				</p>
+				<p class="lets-talk">
+					<a
+						class="button"
+						href="mailto:info@cyberfern.com"
+						>GET IN TOUCH</a
+					>
+				</p>
+			</div>
+			<div class="hero-image">
+				<picture>
+					<source
+						srcset="/images/hero.avif"
+						type="image/avif"
+					/>
+					<source
+						srcset="/images/hero.webp"
+						type="image/webp"
+					/>
+					<img
+						alt=""
+						height="450"
+						src="/images/hero.jpg"
+						width="675"
+					/>
+				</picture>
+			</div>
+		</section>
+		<section class="why">
+			<header>
+				<h2>Background</h2>
+			</header>
+			<div>
+				<p>
+					Anna's career spans both sides of the security divide. As a full-stack
+					and DevSecOps engineer, she has built and secured the systems that
+					organisations depend on. She understands the technical challenges
+					security teams face{md}not from a textbook, but from the command line.
+				</p>
+				<p>
+					Her academic background is equally distinctive: a Master's degree in
+					Sociology, an MBA, and a Diploma in Machine Learning and Artificial
+					Intelligence. This combination of technical depth and human science
+					gives Anna a perspective that most security consultants simply don't
+					have.
+				</p>
+				<p>
+					Anna has founded and run her own startups, giving her first-hand
+					insight into the pressures founders face when balancing growth with
+					risk.
+				</p>
+			</div>
+		</section>
+		<section class="testimonials">
+			<header>
+				<h2>Approach</h2>
+			</header>
+			<div>
+				<p>
+					Anna bridges boardrooms and server rooms. Her background in sociology,
+					business management, and communications enables her to frame technical
+					challenges in language that resonates with executives and stakeholders{
+						md
+					}while her engineering experience ensures that advice is grounded in
+					practical reality.
+				</p>
+				<p>
+					CyberFern's work is practical, proportionate, and human-centred. Anna
+					doesn't sell fear or push unnecessary complexity. She helps
+					organisations understand their real risk picture and take sensible
+					steps to address it.
+				</p>
+				<p>
+					Known for her engaging and practical teaching style, Anna helps
+					participants walk away with tools they can use immediately{md}whether
+					that's presenting to the board, building a security roadmap, or making
+					smarter investment decisions.
+				</p>
+				<p>
+					<a
+						href="https://www.linkedin.com/in/annalezhikova/"
+						rel="external"
+						>Connect with Anna on LinkedIn</a
+					>
+				</p>
+			</div>
+		</section>
+		<section class="expect">
+			<header>
+				<h2>How CyberFern Can Help</h2>
+			</header>
+			<div>
+				<p>CyberFern works with organisations across four areas:</p>
+				<p>
+					<strong>Free consultations for startups and small businesses.</strong> One
+					hour to understand your real risk picture and get oriented{md}no sales
+					pitch, just clarity.
+				</p>
+				<p>
+					<strong>Training workshops.</strong> Six focused sessions covering everything
+					from quantifying cyber risk to presenting security to the board, for groups
+					of 2–15.
+				</p>
+				<p>
+					<strong>Security Champions Programme.</strong> A structured, tailored programme
+					that embeds security expertise directly in your engineering teams.
+				</p>
+				<p class="lets-talk">
+					<a
+						class="button"
+						href="mailto:info@cyberfern.com"
+						>DISCUSS YOUR NEEDS</a
+					>
+				</p>
+			</div>
+		</section>
+	</main>
+</Layout>

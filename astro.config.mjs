@@ -1,9 +1,11 @@
-import mdx from "@astrojs/mdx"
 import { defineConfig } from "astro/config"
 
 import sitemap from "@astrojs/sitemap"
 
-const ignore = []
+const ignore = [
+	"https://cyberfern.com/privacy-policy/",
+	"https://cyberfern.com/terms-of-use/",
+]
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,7 +13,6 @@ export default defineConfig({
 		enabled: false,
 	},
 	integrations: [
-		mdx(),
 		sitemap({
 			canonicalURL: "https://cyberfern.com/",
 			filter: (page) => !ignore.includes(page),

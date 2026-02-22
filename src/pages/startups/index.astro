@@ -1,0 +1,181 @@
+---
+import Layout from "~layouts/index.astro"
+
+import collapseWhitespace from "~utilities/collapseWhitespace"
+
+const ellip = ` … `
+const md = " — "
+
+const meta = {
+	description: collapseWhitespace(`
+		CyberFern helps startups build strong, secure, and resilient
+		foundations without breaking the bank. Book a free one-hour
+		consultation to understand your real risk picture from day one.
+	`),
+	title: "Cybersecurity for Startups | CyberFern",
+}
+---
+
+<Layout {meta}>
+	<main id="main-content">
+		<section class="hero">
+			<div class="hero-text">
+				<header>
+					<h1>
+						You grow your business{ellip}<br />We build your cyber-resilience
+					</h1>
+				</header>
+				<p>Starting up is hard enough without worrying about cybersecurity.</p>
+				<p>
+					At CyberFern, we guide startups to build strong, secure, and resilient
+					foundations without breaking the bank. Our practical, straightforward
+					approach helps you to understand and address your security needs, so
+					you can focus on <em>growing your business</em>.
+				</p>
+				<p class="lets-talk">
+					<a
+						class="button"
+						href="https://calendly.com/admin-cyberfern/free-consultation-with-cyberfern"
+						rel="external"
+						>FREE STARTUP SECURITY CONSULTATION</a
+					>
+				</p>
+				<p>
+					<span class="highlight">No pressure, no technical jargon.</span> Just straightforward
+					guidance to help your startup grow securely.
+				</p>
+			</div>
+			<div class="hero-image">
+				<picture>
+					<source
+						srcset="/images/hero.avif"
+						type="image/avif"
+					/>
+					<source
+						srcset="/images/hero.webp"
+						type="image/webp"
+					/>
+					<img
+						alt=""
+						height="450"
+						src="/images/hero.jpg"
+						width="675"
+					/>
+				</picture>
+			</div>
+		</section>
+		<section class="what">
+			<header>
+				<h2>What We Do</h2>
+			</header>
+			<div class="card one">
+				<picture>
+					<source
+						srcset="/images/assess-your-cyber-risks.avif"
+						type="image/avif"
+					/>
+					<source
+						srcset="/images/assess-your-cyber-risks.webp"
+						type="image/webp"
+					/>
+					<img
+						alt=""
+						height="300"
+						src="/images/assess-your-cyber-risks.jpg"
+						width="450"
+					/>
+				</picture>
+				<h3>Assess your cyber risks</h3>
+				<p>
+					<strong>Know Where You Stand</strong>. We'll review your current setup
+					and identify what matters most for your startup's security. Simple,
+					practical, and focused on your actual risks.
+				</p>
+			</div>
+			<div class="card two">
+				<picture>
+					<source
+						srcset="/images/build-a-roadmap.avif"
+						type="image/avif"
+					/>
+					<source
+						srcset="/images/build-a-roadmap.webp"
+						type="image/webp"
+					/>
+					<img
+						alt=""
+						height="300"
+						src="/images/build-a-roadmap.jpg"
+						width="450"
+					/>
+				</picture>
+				<h3>Build a roadmap</h3>
+				<p>
+					<strong>Clear Steps Forward</strong>. Get a realistic plan that fits
+					your budget and growth stage. We prioritise what's crucial now and
+					what can wait, so you can make informed decisions about your security
+					investments.
+				</p>
+			</div>
+			<div class="card three">
+				<picture>
+					<source
+						srcset="/images/get-help-with-implementation.avif"
+						type="image/avif"
+					/>
+					<source
+						srcset="/images/get-help-with-implementation.webp"
+						type="image/webp"
+					/>
+					<img
+						alt=""
+						height="300"
+						src="/images/get-help-with-implementation.jpg"
+						width="450"
+					/>
+				</picture>
+				<h3>Get help with implementation</h3>
+				<p>
+					<strong>Hands-On Support</strong>. Need help putting the plan into
+					action? We're here to guide you through each step, from setting up
+					basic protections to training your team. No stress{md}just steady
+					progress toward better security.
+				</p>
+			</div>
+			<p class="lets-talk">
+				<a
+					class="button"
+					href="https://calendly.com/admin-cyberfern/free-consultation-with-cyberfern"
+					rel="external"
+					>BOOK YOUR FREE CONSULTATION</a
+				>
+			</p>
+		</section>
+		<section class="expect">
+			<header>
+				<h2>What to Expect</h2>
+			</header>
+			<div>
+				<p>
+					Your free one-hour consultation is a no-strings conversation about
+					where your startup stands today and what you actually need. Anna has
+					run startups herself, so she understands the pressure to move fast and
+					the temptation to leave security for later.
+				</p>
+				<p>
+					In that hour, you'll get a clear picture of your biggest risks, a
+					sense of what's urgent and what can wait, and honest advice on next
+					steps{md}whether that involves CyberFern or not.
+				</p>
+				<p class="lets-talk">
+					<a
+						class="button"
+						href="https://calendly.com/admin-cyberfern/free-consultation-with-cyberfern"
+						rel="external"
+						>BOOK YOUR FREE CONSULTATION</a
+					>
+				</p>
+			</div>
+		</section>
+	</main>
+</Layout>

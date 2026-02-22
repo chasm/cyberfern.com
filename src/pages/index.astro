@@ -1,49 +1,42 @@
 ---
-import Layout from "../layouts/index.astro"
+import Layout from "~layouts/index.astro"
 
-import collapseWhitespace from "../utilities/collapseWhitespace"
+import collapseWhitespace from "~utilities/collapseWhitespace"
 
-const ellip = ` … `
-const md = " — "
+const ellip = ` … `
+const md = " — "
 
 const meta = {
 	description: collapseWhitespace(`
-		At CyberFern, we guide startups to build strong, secure, and
-		resilient foundations without breaking the bank. Our practical,
-		straightforward approach helps you to understand and address
-		your security needs, so you can focus on growing your business.
+		CyberFern makes cybersecurity practical, proportionate, and human.
+		We help startups, small businesses, and organisations build strong
+		security foundations through consulting, training, and tailored
+		programmes.
 	`),
-	title: "Cyberfern.com | Free Startup Security Consultation",
+	title: "CyberFern | Cybersecurity Made Practical",
 }
 ---
 
 <Layout {meta}>
-	<main>
+	<main id="main-content">
 		<section class="hero">
 			<div class="hero-text">
 				<header>
 					<h1>
-						You grow your business{ellip}<br />We build your cyber-resilience
+						Cybersecurity made practical{ellip}<br />proportionate, and human
 					</h1>
 				</header>
-				<p>Starting up is hard enough without worrying about cybersecurity.</p>
 				<p>
-					At CyberFern, we guide startups to build strong, secure, and resilient
-					foundations without breaking the bank. Our practical, straightforward
-					approach helps you to understand and address your security needs, so
-					you can focus on <em>growing your business</em>.
+					Whether you're a startup finding your feet, a small business
+					protecting what you've built, or an organisation ready to level up
+					your security culture{md}CyberFern can help.
 				</p>
-				<p class="lets-talk">
-					<a
-						class="button"
-						href="https://calendly.com/admin-cyberfern/free-consultation-with-cyberfern"
-						rel="external"
-						>FREE STARTUP SECURITY CONSULTATION</a
+				<p>
+					We bring more than twenty years of experience in software development,
+					business management, and cybersecurity to every engagement. <span
+						class="highlight">No jargon, no fear-mongering.</span
 					>
-				</p>
-				<p>
-					<span class="highlight">No pressure, no technical jargon.</span> Just straightforward
-					guidance to help your startup grow securely.
+					Just clear, honest guidance.
 				</p>
 			</div>
 			<div class="hero-image">
@@ -65,120 +58,86 @@ const meta = {
 				</picture>
 			</div>
 		</section>
-		<section class="what">
+		<section class="what audiences">
 			<header>
-				<h2>What We Do</h2>
+				<h2>Who We Help</h2>
 			</header>
 			<div class="card one">
-				<picture>
-					<source
-						srcset="/images/assess-your-cyber-risks.avif"
-						type="image/avif"
-					/>
-					<source
-						srcset="/images/assess-your-cyber-risks.webp"
-						type="image/webp"
-					/>
-					<img
-						alt=""
-						height="300"
-						src="/images/assess-your-cyber-risks.jpg"
-						width="450"
-					/>
-				</picture>
-				<h3>Assess your cyber risks</h3>
+				<h3><a href="/startups/">Startups</a></h3>
 				<p>
-					<strong>Know Where You Stand</strong>. We’ll review your current setup
-					and identify what matters most for your startup’s security. Simple,
-					practical, and focused on your actual risks.
+					Starting up is hard enough without worrying about cybersecurity. Get a
+					free consultation to understand your real risk picture from day one.
 				</p>
 			</div>
 			<div class="card two">
-				<picture>
-					<source
-						srcset="/images/build-a-roadmap.avif"
-						type="image/avif"
-					/>
-					<source
-						srcset="/images/build-a-roadmap.webp"
-						type="image/webp"
-					/>
-					<img
-						alt=""
-						height="300"
-						src="/images/build-a-roadmap.jpg"
-						width="450"
-					/>
-				</picture>
-				<h3>Build a roadmap</h3>
+				<h3><a href="/small-businesses/">Small Businesses</a></h3>
 				<p>
-					<strong>Clear Steps Forward</strong>. Get a realistic plan that fits
-					your budget and growth stage. We prioritise what’s crucial now and
-					what can wait, so you can make informed decisions about your security
-					investments.
+					Think you're too small to worry about cyber threats? That's the most
+					common misconception we hear. Let us help you protect what you've
+					built.
 				</p>
 			</div>
 			<div class="card three">
-				<picture>
-					<source
-						srcset="/images/get-help-with-implementation.avif"
-						type="image/avif"
-					/>
-					<source
-						srcset="/images/get-help-with-implementation.webp"
-						type="image/webp"
-					/>
-					<img
-						alt=""
-						height="300"
-						src="/images/get-help-with-implementation.jpg"
-						width="450"
-					/>
-				</picture>
-				<h3>Get help with implementation</h3>
+				<h3><a href="/workshops/">Workshops &amp; Training</a></h3>
 				<p>
-					<strong>Hands-On Support</strong>. Need help putting the plan into
-					action? We’re here to guide you through each step, from setting up
-					basic protections to training your team. No stress{md}just steady
-					progress toward better security.
+					Six focused workshops that bridge the gap between technical security
+					and business thinking{md}from quantifying cyber risk to boardroom
+					presentations.
 				</p>
 			</div>
+			<div class="card four">
+				<h3><a href="/champions/">Security Champions</a></h3>
+				<p>
+					A structured programme to embed security into your software
+					development lifecycle{md}faster, more secure delivery without burning
+					people out.
+				</p>
+			</div>
+			<p class="lets-talk">
+				<a
+					class="button"
+					href="https://calendly.com/admin-cyberfern/free-consultation-with-cyberfern"
+					rel="external"
+					>BOOK A FREE CONSULTATION</a
+				>
+			</p>
 		</section>
-		<div class="why">
-			<heading>
+		<section class="why">
+			<header>
 				<h2>Why Choose Us?</h2>
-			</heading>
+			</header>
 			<div>
 				<p>
 					Like the native ferns of New Zealand, we believe in supporting growth
-					from the ground up. We’re passionate about <strong
-						>helping startups lay down strong roots{md}with</strong
-					> practical, budget-conscious security solutions focused on what matters
-					most.
+					from the ground up. We're passionate about <strong
+						>helping organisations build strong security foundations{
+							md
+						}with</strong
+					> practical, proportionate solutions focused on what matters most.
 				</p>
 				<p>
 					What makes us different is our <strong>holistic vision</strong> of cybersecurity.
-					We know that effective security isn’t just about technology{md}it’s
+					We know that effective security isn't just about technology{md}it's
 					about how your people work, how your processes flow, and how your
 					business grows. By
 					<strong>integrating</strong> all these elements, we create solutions that
-					truly fit your startup’s reality and support your journey from day one.
+					truly fit your organisation's reality and support your journey.
 				</p>
 			</div>
-		</div>
-		<div class="testimonials">
-			<heading>
+		</section>
+		<section class="testimonials">
+			<header>
 				<h2>Testimonials</h2>
-			</heading>
+			</header>
 			<div>
 				<p>
-					“Anna has been fantastic in our Cyber Security Journey. Helping us
+					"Anna has been fantastic in our Cyber Security Journey. Helping us
 					with processes and overall mindset to keep PAM safe within our
 					acceptable risk appetite.
 				</p>
 				<p>
-					“She has opened our eyes to risks we never even considered and
-					reassured us on areas that need less attention at this stage.”
+					"She has opened our eyes to risks we never even considered and
+					reassured us on areas that need less attention at this stage."
 				</p>
 				<p>
 					<a
@@ -197,62 +156,67 @@ const meta = {
 							<img
 								alt=""
 								height="105"
-								src="/images/pam.jpg"
+								src="/images/pam.png"
 								width="180"
 							/>
 						</picture>
 					</a>
 				</p>
 				<p>
-					“We engaged Cyberfern to conduct a security review of our system, and
+					"We engaged Cyberfern to conduct a security review of our system, and
 					the experience exceeded our expectations. From the outset, they
 					demonstrated a deep understanding of cybersecurity best practices and
 					took the time to understand our specific challenges and business
 					needs.
 				</p>
 				<p>
-					“Their thorough assessment identified key areas for improvement while
+					"Their thorough assessment identified key areas for improvement while
 					also highlighting our existing strengths. What truly stood out was
 					their ability to explain complex security concepts in a clear and
 					actionable way, making it easy for our team to implement the
 					recommended changes.
 				</p>
 				<p>
-					“Anna was professional, detail-oriented, and proactive throughout the
+					"Anna was professional, detail-oriented, and proactive throughout the
 					process. Their insights have significantly strengthened our security
-					posture, and we feel much more confident in our system’s resilience.
+					posture, and we feel much more confident in our system's resilience.
 				</p>
 				<p>
-					“We highly recommend Cyberfern to any organisation looking for expert
-					security consulting.”
+					"We highly recommend Cyberfern to any organisation looking for expert
+					security consulting."
 				</p>
 				<p>
-					<p>
-						<a
-							href="https://ezidocs.com/"
-							rel="external"
-						>
-							<picture>
-								<source
-									srcset="/images/ezidocs.avif"
-									type="image/avif"
-								/>
-								<source
-									srcset="/images/ezidocs.webp"
-									type="image/webp"
-								/>
-								<img
-									alt=""
-									height="31"
-									src="/images/ezidocs.jpg"
-									width="180"
-								/>
-							</picture>
-						</a>
-					</p>
+					<a
+						href="https://ezidocs.com/"
+						rel="external"
+					>
+						<picture>
+							<source
+								srcset="/images/ezidocs.avif"
+								type="image/avif"
+							/>
+							<source
+								srcset="/images/ezidocs.webp"
+								type="image/webp"
+							/>
+							<img
+								alt=""
+								height="31"
+								src="/images/ezidocs.png"
+								width="180"
+							/>
+						</picture>
+					</a>
+				</p>
+				<p class="lets-talk">
+					<a
+						class="button"
+						href="mailto:info@cyberfern.com"
+						>GET IN TOUCH</a
+					>
 				</p>
 			</div>
-		</div>
+		</section>
 	</main>
 
 	<aside

@@ -1,0 +1,179 @@
+---
+import Layout from "~layouts/index.astro"
+
+import collapseWhitespace from "~utilities/collapseWhitespace"
+
+const md = " — "
+
+const meta = {
+	description: collapseWhitespace(`
+		Six focused cybersecurity workshops that bridge the gap between
+		technical security and business thinking. Available in-person or
+		online for groups of 2–15.
+	`),
+	title: "Cybersecurity Training Workshops | CyberFern",
+}
+---
+
+<Layout {meta}>
+	<main id="main-content">
+		<section class="hero">
+			<div class="hero-text">
+				<header>
+					<h1>Cybersecurity Training Workshops</h1>
+				</header>
+				<p>
+					Cybersecurity doesn't have to be intimidating or incomprehensible.
+					These workshops bridge the gap between technical complexity and
+					business reality, helping teams at all levels understand, communicate,
+					and manage cyber risk effectively.
+				</p>
+				<p>
+					Whether you're a CISO struggling to get board buy-in, a business
+					leader trying to oversee security initiatives, or an IT manager
+					balancing security with operational needs{md}these sessions provide
+					practical tools and frameworks you can apply immediately.
+				</p>
+				<p class="lets-talk">
+					<a
+						class="button"
+						href="mailto:info@cyberfern.com"
+						>DISCUSS YOUR TRAINING NEEDS</a
+					>
+				</p>
+			</div>
+			<div class="hero-image">
+				<picture>
+					<source
+						srcset="/images/hero.avif"
+						type="image/avif"
+					/>
+					<source
+						srcset="/images/hero.webp"
+						type="image/webp"
+					/>
+					<img
+						alt=""
+						height="450"
+						src="/images/hero.jpg"
+						width="675"
+					/>
+				</picture>
+			</div>
+		</section>
+		<section class="workshops">
+			<header>
+				<h2>Our Workshops</h2>
+			</header>
+			<div>
+				<h3>Quantifying Cyber Risk</h3>
+				<p>
+					<strong>For:</strong> Security professionals, IT managers, CISOs
+				</p>
+				<p>
+					Learn to move beyond qualitative risk assessments and communicate
+					cyber risk in financial terms that resonate with business
+					stakeholders. This workshop provides practical approaches to
+					quantifying security risks, calculating potential business impact, and
+					presenting risk scenarios that drive informed investment decisions.
+				</p>
+
+				<h3>Presenting Cybersecurity to the Board</h3>
+				<p>
+					<strong>For:</strong> Security professionals, CISOs, IT leadership
+				</p>
+				<p>
+					Transform how you communicate security to executive leadership and
+					board members. Learn to translate technical vulnerabilities and
+					threats into business language, focusing on impact to revenue,
+					reputation, and operations. Position cybersecurity as a business
+					enabler rather than a cost centre.
+				</p>
+
+				<h3>Building Your Security Roadmap</h3>
+				<p>
+					<strong>For:</strong> Security managers, CISOs, IT leadership
+				</p>
+				<p>
+					Develop a multi-year security strategy that aligns with business
+					objectives and scales with organisational growth. Learn to assess your
+					current security posture, prioritise initiatives based on risk and
+					business value, and build consensus across stakeholders.
+				</p>
+
+				<h3>Optimising Cybersecurity Investment</h3>
+				<p>
+					<strong>For:</strong> CISOs, business executives
+				</p>
+				<p>
+					Make smarter cybersecurity investment decisions by evaluating
+					solutions based on risk reduction and business value rather than
+					vendor promises. Gain practical skills to justify budget requests,
+					challenge unnecessary spending, and demonstrate ROI to financial
+					stakeholders.
+				</p>
+
+				<h3>Bridging Business and Technology</h3>
+				<p>
+					<strong>For:</strong> Security professionals, IT managers, business managers
+				</p>
+				<p>
+					Master the art of translating between technical security requirements
+					and business needs. Learn to build productive relationships, resolve
+					conflicts between security and business objectives, and position
+					yourself as a trusted adviser to both sides.
+				</p>
+
+				<h3>Cyber Risk Management Fundamentals</h3>
+				<p>
+					<strong>For:</strong> Business managers, executives, board members
+				</p>
+				<p>
+					Understand cybersecurity from a business perspective without getting
+					lost in technical jargon. Gain a practical framework for overseeing
+					cyber risk, asking the right questions of security teams, and making
+					informed governance decisions.
+				</p>
+				<p class="lets-talk">
+					<a
+						class="button"
+						href="mailto:info@cyberfern.com"
+						>DISCUSS YOUR TRAINING NEEDS</a
+					>
+				</p>
+			</div>
+		</section>
+		<section class="expect">
+			<header>
+				<h2>Workshop Details</h2>
+			</header>
+			<div>
+				<p>
+					<strong>Duration:</strong> Flexible{md}from two hours to a full day,
+					tailored to your needs.
+				</p>
+				<p>
+					<strong>Format:</strong> Available in-person or online.
+				</p>
+				<p>
+					<strong>Group size:</strong> 2–15 participants.
+				</p>
+				<p>
+					<strong>Style:</strong> Engaging, interactive sessions with practical exercises
+					and real-world scenarios.
+				</p>
+				<p>
+					All workshops can be customised to focus on the topics that matter
+					most to your team.
+				</p>
+				<p class="lets-talk">
+					<a
+						class="button"
+						href="mailto:info@cyberfern.com"
+						>BOOK A WORKSHOP</a
+					>
+				</p>
+			</div>
+		</section>
+	</main>
+</Layout>

@@ -1,7 +1,7 @@
 ---
-import "../../layouts/styles/legal.css"
+import "~layouts/styles/legal.css"
 
-import Layout from "../../layouts/index.astro"
+import Layout from "~layouts/index.astro"
 
 import collapseWhitespace from "~utilities/collapseWhitespace"
 
@@ -18,75 +18,78 @@ const meta = {
 ---
 
 <Layout {meta}>
-	<main class="privacy-policy">
+	<main
+		id="main-content"
+		class="privacy-policy"
+	>
 		<article class="page">
 			<h1>Privacy Policy</h1>
 			<p>
-				We collect personal information from you <strong>only</strong> when contact
+				We collect personal information from you <strong>only</strong> when you contact
 				us by phone or email, so you are in full control of what is collected. Any
-				information we collect, such as your email address or phone number, will
-				be collected <strong>only</strong> for the purpose of contacting you or providing
+				information we collect, such as your email address or phone number, will be
+				collected <strong>only</strong> for the purpose of contacting you or providing
 				the services you have requested.
-				<p>
-					<strong
-						>We do not collect or use your personal information for any purpose
-						other than those given above.</strong
-					>
-				</p>
-				<p>
-					Providing this information to us is optional. We do not share your
-					information with other parties. Ever. If you do not provide contact
-					details, then you will not receive communications from us. It is up to
-					you.
-				</p>
-				<p>
-					If you do provide personal information, then we keep it safe. We do so
-					by storing it securely offline. These data are accessible only by
-					CyberFern.
-				</p>
-				<p>
-					That said, we presume that the employees of the online data services
-					can access the data as well. Currently, we use two services.
-				</p>
-				<p>
-					You have the right to ask us what personal information we have of
-					yours. We will make any corrections you desire or delete your
-					information at your request. If youʼd like to ask for a copy of your
-					information, or to have it corrected, please <a
-						href="mailto:info@cyberfern.com">contact us.</a
-					>
-				</p>
-				<h2>Secure server</h2>
-				<p>
-					We serve the CyberFern.com site using <a
-						href="https://en.wikipedia.org/wiki/Transport_Layer_Security"
-						rel="external"
-						>Transport Layer Security</a
-					> (TLS). This encrypts communications between your browser and our server,
-					ensuring your privacy.
-				</p>
-				<p>
-					Use of <abbr title="Transport Layer Security">TLS</abbr> is the current
-					industry best practice and helps to ensure both your privacy and your security.
-				</p>
-				<h2>Privacy by Design</h2>
-				<p>
-					We do our best to follow the seven <a
-						href="https://www.iso.org/committee/6935430.html"
-						rel="external"
-						>Privacy by Design</a
-					> principles:
-				</p>
-				<ol>
-					<li>Proactive not reactive; preventive not remedial</li>
-					<li>Privacy as the default setting</li>
-					<li>Privacy embedded into design</li>
-					<li>Full functionality — positive-sum, not zero-sum</li>
-					<li>End-to-end security — full lifecycle protection</li>
-					<li>Visibility and transparency — keep it open</li>
-					<li>Respect for user privacy — keep it user-centric</li>
-				</ol>
 			</p>
+			<p>
+				<strong
+					>We do not collect or use your personal information for any purpose
+					other than those given above.</strong
+				>
+			</p>
+			<p>
+				Providing this information to us is optional. We do not share your
+				information with other parties. Ever. If you do not provide contact
+				details, then you will not receive communications from us. It is up to
+				you.
+			</p>
+			<p>
+				If you do provide personal information, then we keep it safe. We do so
+				by storing it securely offline. These data are accessible only by
+				CyberFern.
+			</p>
+			<p>
+				That said, we presume that the employees of the online data services can
+				access the data as well. Currently, we use two services.
+			</p>
+			<p>
+				You have the right to ask us what personal information we have of yours.
+				We will make any corrections you desire or delete your information at
+				your request. If youʼd like to ask for a copy of your information, or to
+				have it corrected, please <a href="mailto:info@cyberfern.com"
+					>contact us.</a
+				>
+			</p>
+			<h2>Secure server</h2>
+			<p>
+				We serve the CyberFern.com site using <a
+					href="https://en.wikipedia.org/wiki/Transport_Layer_Security"
+					rel="external"
+					>Transport Layer Security</a
+				> (TLS). This encrypts communications between your browser and our server,
+				ensuring your privacy.
+			</p>
+			<p>
+				Use of <abbr title="Transport Layer Security">TLS</abbr> is the current industry
+				best practice and helps to ensure both your privacy and your security.
+			</p>
+			<h2>Privacy by Design</h2>
+			<p>
+				We do our best to follow the seven <a
+					href="https://www.iso.org/committee/6935430.html"
+					rel="external"
+					>Privacy by Design</a
+				> principles:
+			</p>
+			<ol>
+				<li>Proactive not reactive; preventive not remedial</li>
+				<li>Privacy as the default setting</li>
+				<li>Privacy embedded into design</li>
+				<li>Full functionality — positive-sum, not zero-sum</li>
+				<li>End-to-end security — full lifecycle protection</li>
+				<li>Visibility and transparency — keep it open</li>
+				<li>Respect for user privacy — keep it user-centric</li>
+			</ol>
 		</article>
 	</main>
 </Layout>

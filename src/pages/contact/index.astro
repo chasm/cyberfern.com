@@ -1,0 +1,106 @@
+---
+import Layout from "~layouts/index.astro"
+
+import collapseWhitespace from "~utilities/collapseWhitespace"
+
+const md = " — "
+
+const meta = {
+	description: collapseWhitespace(`
+		Get in touch with CyberFern. Contact Anna Lezhikova for
+		cybersecurity consultations, training workshops, or the
+		Security Champions Programme.
+	`),
+	title: "Contact CyberFern | CyberFern",
+}
+---
+
+<Layout {meta}>
+	<main id="main-content">
+		<section class="hero">
+			<div class="hero-text">
+				<header>
+					<h1>Contact CyberFern</h1>
+				</header>
+				<p>
+					Whether you're exploring a free consultation, interested in a training
+					workshop, or ready to start a Security Champions programme{md}we'd
+					love to hear from you.
+				</p>
+				<p>Email Anna directly and she'll get back to you promptly.</p>
+				<p class="lets-talk">
+					<a
+						class="button"
+						href="mailto:info@cyberfern.com"
+						>EMAIL ANNA</a
+					>
+				</p>
+			</div>
+			<div class="hero-image">
+				<picture>
+					<source
+						srcset="/images/hero.avif"
+						type="image/avif"
+					/>
+					<source
+						srcset="/images/hero.webp"
+						type="image/webp"
+					/>
+					<img
+						alt=""
+						height="450"
+						src="/images/hero.jpg"
+						width="675"
+					/>
+				</picture>
+			</div>
+		</section>
+		<section class="why">
+			<header>
+				<h2>What to Reach Out About</h2>
+			</header>
+			<div>
+				<p>
+					<strong>Free consultation.</strong> A one-hour conversation to understand
+					your cybersecurity position{md}for startups and small businesses, at
+					no cost.
+				</p>
+				<p>
+					<strong>Training workshops.</strong> Six focused workshops on topics from
+					quantifying cyber risk to presenting security to the board.
+				</p>
+				<p>
+					<strong>Security Champions Programme.</strong> A tailored programme to embed
+					security expertise in your engineering teams.
+				</p>
+				<p>
+					<strong>Something else.</strong> If you're not sure where to start, just
+					say hello. Anna is happy to point you in the right direction.
+				</p>
+			</div>
+		</section>
+		<section class="testimonials">
+			<header>
+				<h2>Connect</h2>
+			</header>
+			<div>
+				<p>
+					<strong>Email:</strong>
+					<a href="mailto:info@cyberfern.com">info@cyberfern.com</a>
+				</p>
+				<p>
+					<strong>LinkedIn:</strong>
+					<a
+						href="https://www.linkedin.com/in/annalezhikova/"
+						rel="external"
+						>Anna Lezhikova</a
+					>
+				</p>
+				<p>
+					CyberFern is based in Wellington, New Zealand, and works with clients
+					locally and remotely.
+				</p>
+			</div>
+		</section>
+	</main>
+</Layout>

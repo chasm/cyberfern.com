@@ -47,12 +47,12 @@ const fernGroup = fernSvg.match(/<g[^>]*>[\s\S]*?<\/g>/)?.[0] ?? ""
 
 const ogSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
   <rect width="1200" height="630" fill="#134e31"/>
-  <g transform="translate(200, 60) scale(0.9)">
+  <g transform="translate(100, 65) scale(0.65)">
     ${fernGroup}
   </g>
-  <text x="520" y="280" font-family="system-ui, sans-serif" font-size="96" font-weight="700" fill="#ffe900">CyberFern</text>
-  <text x="520" y="370" font-family="system-ui, sans-serif" font-size="32" fill="#fcfbf0">Cybersecurity made practical,</text>
-  <text x="520" y="415" font-family="system-ui, sans-serif" font-size="32" fill="#fcfbf0">proportionate, and human.</text>
+  <text x="480" y="280" font-family="system-ui, sans-serif" font-size="96" font-weight="700" fill="#ffe900">CyberFern</text>
+  <text x="480" y="370" font-family="system-ui, sans-serif" font-size="32" fill="#fcfbf0">Cybersecurity made practical,</text>
+  <text x="480" y="415" font-family="system-ui, sans-serif" font-size="32" fill="#fcfbf0">proportionate, and human.</text>
 </svg>`
 
 await sharp(Buffer.from(ogSvg))

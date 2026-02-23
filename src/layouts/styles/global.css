@@ -67,11 +67,11 @@
 	}
 
 	body > header .logo {
-		grid-column: col-start / span 3;
+		grid-column: col-start / span 2;
 	}
 
 	body > header nav {
-		grid-column: col-start 4 / span 9;
+		grid-column: col-start 3 / span 10;
 	}
 
 	body > header nav .nav-list {
@@ -626,7 +626,7 @@
 		}
 
 		body > header .logo {
-			grid-column: col-start / span 4;
+			grid-column: col-start / span 3;
 		}
 
 		.logo p {
@@ -635,7 +635,7 @@
 		}
 
 		body > header nav {
-			grid-column: col-start 5 / span 14;
+			grid-column: col-start 4 / span 15;
 		}
 
 		body > header nav .nav-list {
@@ -809,6 +809,10 @@
 	}
 
 	@media (width < 54rem) {
+		body > header {
+			padding-block-start: var(--space-s);
+		}
+
 		body > header nav .nav-list {
 			display: none;
 		}
@@ -836,19 +840,28 @@
 
 		body > header nav .nav-mobile ul {
 			background-color: var(--color-dark);
+			border: 1px solid rgb(255 255 255 / 0.7);
 			display: flex;
 			flex-direction: column;
 			gap: 0;
 			list-style: none;
 			margin: 0;
-			padding: var(--space-2xs) 0;
+			padding: 0;
 			position: absolute;
 			right: 3svw;
 			z-index: 10;
 		}
 
 		body > header nav .nav-mobile ul li {
-			padding: var(--space-3xs) var(--space-s);
+			align-items: flex-start;
+			border-bottom: 1px solid rgb(255 255 255 / 0.7);
+			height: auto;
+			line-height: 1.6;
+			padding: var(--space-xs) var(--space-s);
+		}
+
+		body > header nav .nav-mobile ul li:last-child {
+			border-bottom: none;
 		}
 
 		body > header nav {
@@ -865,23 +878,47 @@
 			flex-direction: column;
 			gap: 0.75rem;
 			justify-content: space-between;
+			padding-block-start: 0;
 		}
 
 		.lets-talk a.button {
 			margin-inline-start: 0;
 		}
 
+		main .hero-text {
+			padding-block-end: var(--space-l);
+		}
+
+		main .what,
+		main .why,
+		main .expect,
+		main .testimonials,
+		main .workshops {
+			padding-block-start: var(--space-s);
+		}
+
+		main .what h2 {
+			padding-block-start: 0;
+		}
+
 		main .one,
 		main .two,
 		main .three,
 		main .four,
+		main .audiences .one,
+		main .audiences .two,
+		main .audiences .three,
 		main .why header,
+		main .why > div,
 		main .why p,
 		main .expect header,
+		main .expect > div,
 		main .expect p,
 		main .testimonials header,
+		main .testimonials > div,
 		main .testimonials p,
 		main .workshops header,
+		main .workshops > div,
 		main .workshops p,
 		body > aside.about header,
 		body > aside.about .about-content {
@@ -921,24 +958,43 @@
 			grid-column: col-start / span 18;
 		}
 
+		footer > nav.footer-nav {
+			padding-block-start: var(--space-s);
+		}
+
+		footer > nav.footer-nav ul {
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+
+		footer > nav.supplemental {
+			padding-block-start: var(--space-s);
+		}
+
 		footer > nav.supplemental ul {
-			display: flex;
-			gap: 1.5rem;
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+
+		footer > .contact-info {
+			justify-content: flex-start;
+			padding-block-start: var(--space-s);
 		}
 	}
 
 	@media (width < 27rem) {
 		body > header {
+			align-items: baseline;
 			height: min-content;
 		}
 
 		body > header .logo {
-			grid-column: col-start / span 18;
+			grid-column: col-start / span 9;
 			margin-block: var(--space-l) var(--space-s);
 		}
 
 		body > header nav {
-			grid-column: col-start / span 18;
+			grid-column: col-start 10 / span 9;
 		}
 
 		body > header nav ul li {
@@ -947,7 +1003,6 @@
 
 		body > header nav .nav-mobile ul {
 			right: 0;
-			left: 0;
 		}
 	}
 }

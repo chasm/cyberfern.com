@@ -81,7 +81,7 @@ const navItems = [
 		title: "Cybersecurity for startups.",
 	},
 	{
-		label: "Small Businesses",
+		label: "Small\u00A0Businesses",
 		href: "/small-businesses/",
 		title: "Cybersecurity for small businesses.",
 	},
@@ -303,6 +303,14 @@ function isActive(href: string): boolean {
 				</details>
 			</nav>
 		</header>
+		<script>
+			document.addEventListener("click", (e) => {
+				const menu = document.querySelector(".nav-mobile")
+				if (menu?.open && !menu.contains(e.target as Node)) {
+					menu.open = false
+				}
+			})
+		</script>
 		<slot />
 		<footer>
 			<h2 class="sr-only">Site footer</h2>

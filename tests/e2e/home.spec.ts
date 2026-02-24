@@ -3,15 +3,6 @@ import AxeBuilder from "@axe-core/playwright"
 
 const BASE = "http://localhost:4321"
 
-/**
- * Known axe-core violations on the existing site (pre-refactor).
- * These will be fixed in later phases. Excluding them here so the
- * baseline tests pass and guard against NEW regressions.
- *
- * - color-contrast-enhanced: link colour #0057a6 on #fcfbf0 gives
- *   6.93:1 contrast — passes AA but fails AAA enhanced (7:1).
- */
-const KNOWN_VIOLATIONS = ["color-contrast-enhanced"]
 
 test.describe("Home page", () => {
 	test("loads with 200 status", async ({ page }) => {
@@ -176,7 +167,6 @@ test.describe("Home page", () => {
 				"wcag21aa",
 				"wcag22aa",
 			])
-			.disableRules(KNOWN_VIOLATIONS)
 			.analyze()
 
 		expect(

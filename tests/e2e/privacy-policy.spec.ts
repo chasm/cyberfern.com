@@ -1,14 +1,7 @@
 import { test, expect } from "@playwright/test"
 import AxeBuilder from "@axe-core/playwright"
 
-/**
- * Known axe-core violations on the existing site (pre-refactor).
- * These will be fixed in later phases.
- *
- * - color-contrast-enhanced: link colour #0057a6 on #fcfbf0 gives
- *   6.93:1 contrast — passes AA but fails AAA enhanced (7:1).
- */
-const KNOWN_VIOLATIONS = ["color-contrast-enhanced"]
+const BASE = "http://localhost:4321"
 
 test.describe("Privacy Policy page", () => {
 	test("loads with 200 status", async ({ page }) => {
@@ -37,6 +30,55 @@ test.describe("Privacy Policy page", () => {
 		expect(count).toBeGreaterThan(0)
 	})
 
+	test("content mentions key privacy terms", async ({ page }) => {
+		await page.goto("/privacy-policy")
+		const article = page.locator("article")
+		const text = await article.textContent()
+		expect(text).toContain("personal information")
+		expect(text).toContain("Transport Layer Security")
+		expect(text).toContain("Privacy by Design")
+	})
+
+	test("all internal links resolve", async ({ page }) => {
+		await page.goto("/privacy-policy")
+
+		const links = page.locator('a[href^="/"]')
+		const count = await links.count()
+
+		const hrefs = new Set<string>()
+		for (let i = 0; i < count; i++) {
+			const href = await links.nth(i).getAttribute("href")
+			if (href) hrefs.add(href)
+		}
+
+		for (const href of hrefs) {
+			const url = new URL(href, BASE)
+			const response = await page.request.get(url.toString())
+			expect(response.status(), `Internal link "${href}" should resolve`).toBe(
+				200,
+			)
+		}
+	})
+
+	test('all external links have rel="external"', async ({ page }) => {
+		await page.goto("/privacy-policy")
+
+		const externalLinks = page.locator(
+			'a[href^="http://"], a[href^="https://"]',
+		)
+		const count = await externalLinks.count()
+		expect(count).toBeGreaterThan(0)
+
+		for (let i = 0; i < count; i++) {
+			const link = externalLinks.nth(i)
+			const href = await link.getAttribute("href")
+			const rel = await link.getAttribute("rel")
+			expect(rel, `External link "${href}" should have rel="external"`).toBe(
+				"external",
+			)
+		}
+	})
+
 	test("axe-core accessibility scan passes (WCAG AAA)", async ({ page }) => {
 		await page.goto("/privacy-policy")
 		await page.waitForLoadState("networkidle")
@@ -50,7 +92,6 @@ test.describe("Privacy Policy page", () => {
 				"wcag21aa",
 				"wcag22aa",
 			])
-			.disableRules(KNOWN_VIOLATIONS)
 			.analyze()
 
 		expect(

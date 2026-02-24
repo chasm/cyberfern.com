@@ -41,7 +41,20 @@ function pngToIco(pngBuffer) {
 writeFileSync(resolve(publicDir, "favicon.ico"), pngToIco(png32))
 console.log("Created public/favicon.ico (32x32)")
 
-// --- 3. og-image.png (1200x630) ---
+// --- 3. PWA icons ---
+await sharp(faviconSvg)
+	.resize(192, 192)
+	.png()
+	.toFile(resolve(publicDir, "pwa-192x192.png"))
+console.log("Created public/pwa-192x192.png (192x192)")
+
+await sharp(faviconSvg)
+	.resize(512, 512)
+	.png()
+	.toFile(resolve(publicDir, "pwa-512x512.png"))
+console.log("Created public/pwa-512x512.png (512x512)")
+
+// --- 4. og-image.png (1200x630) ---
 const fernSvg = readFileSync(resolve(publicDir, "favicon.svg"), "utf8")
 const fernGroup = fernSvg.match(/<g[^>]*>[\s\S]*?<\/g>/)?.[0] ?? ""
 

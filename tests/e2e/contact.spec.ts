@@ -3,11 +3,6 @@ import AxeBuilder from "@axe-core/playwright"
 
 const BASE = "http://localhost:4321"
 
-/**
- * Known axe-core violations (pre-refactor).
- * - color-contrast-enhanced: link colour fails AAA enhanced (7:1).
- */
-const KNOWN_VIOLATIONS = ["color-contrast-enhanced"]
 
 test.describe("Contact page", () => {
 	test("loads with 200 status", async ({ page }) => {
@@ -105,6 +100,25 @@ test.describe("Contact page", () => {
 		}
 	})
 
+	test('all external links have rel="external"', async ({ page }) => {
+		await page.goto("/contact/")
+
+		const externalLinks = page.locator(
+			'a[href^="http://"], a[href^="https://"]',
+		)
+		const count = await externalLinks.count()
+		expect(count).toBeGreaterThan(0)
+
+		for (let i = 0; i < count; i++) {
+			const link = externalLinks.nth(i)
+			const href = await link.getAttribute("href")
+			const rel = await link.getAttribute("rel")
+			expect(rel, `External link "${href}" should have rel="external"`).toBe(
+				"external",
+			)
+		}
+	})
+
 	test("axe-core accessibility scan passes (WCAG AAA)", async ({ page }) => {
 		await page.goto("/contact/")
 		await page.waitForLoadState("networkidle")
@@ -118,7 +132,6 @@ test.describe("Contact page", () => {
 				"wcag21aa",
 				"wcag22aa",
 			])
-			.disableRules(KNOWN_VIOLATIONS)
 			.analyze()
 
 		expect(

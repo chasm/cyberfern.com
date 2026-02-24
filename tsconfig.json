@@ -20,10 +20,8 @@
 		"noUnusedParameters": true,
 		"paths": {
 			"~components/*": ["src/components/*"],
-			"~constants": ["src/constants"],
 			"~layouts/*": ["src/layouts/*"],
 			"~pages/*": ["src/pages/*"],
-			"~types": ["src/types"],
 			"~utilities/*": ["src/utilities/*"]
 		},
 		"resolveJsonModule": true,

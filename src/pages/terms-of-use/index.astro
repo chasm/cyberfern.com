@@ -5,12 +5,12 @@ import Layout from "~layouts/index.astro"
 
 import collapseWhitespace from "~utilities/collapseWhitespace"
 
+const currentYear = new Date().getFullYear()
+
 const meta = {
 	description: collapseWhitespace(`
-		Our terms of use for the CyberFern.com web site.
-		Run by Anna Lezhikova, CyberFern is a company dedicated
-		to helping startups to ensure that their security is at
-		enterprise level despite being a startup.
+		Terms of use for the CyberFern.com website. Read the
+		conditions for using the CyberFern website and its content.
 	`),
 	robots: ["noindex", "nofollow"],
 	title: "Terms of use | CyberFern.com cyber security",
@@ -87,7 +87,7 @@ const meta = {
 						We may treat any material you send or post publicly to the site as
 						non-confidential. This includes feedback or submissions you provide.
 						It excludes personal information covered in our <a
-							href="/privacy-policy">privacy policy.</a
+							href="/privacy-policy/">privacy policy.</a
 						>
 					</p>
 				</section>
@@ -96,7 +96,7 @@ const meta = {
 						<h3>Copyright</h3>
 					</header>
 					<p>
-						All information on this site is copyright 2024 by CyberFern.com. All
+						All information on this site is copyright {currentYear} by CyberFern.com. All
 						rights reserved.
 					</p>
 					<p>We recognize fair use, of course, with attribution.</p>

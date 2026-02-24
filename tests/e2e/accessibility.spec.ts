@@ -85,8 +85,9 @@ const pages = [
 	{ name: "Champions", path: "/champions/" },
 	{ name: "About", path: "/about/" },
 	{ name: "Contact", path: "/contact/" },
-	{ name: "Privacy Policy", path: "/privacy-policy" },
-	{ name: "Terms of Use", path: "/terms-of-use" },
+	{ name: "Privacy Policy", path: "/privacy-policy/" },
+	{ name: "Terms of Use", path: "/terms-of-use/" },
+	{ name: "Cookie Policy", path: "/cookie-policy/" },
 ]
 
 for (const pg of pages) {

@@ -3,13 +3,14 @@ import { test, expect } from "@playwright/test"
 const PAGES = [
 	{ path: "/", label: "Home" },
 	{ path: "/startups/", label: "Startups" },
-	{ path: "/small-businesses/", label: "Small Businesses" },
+	{ path: "/small-businesses/", label: "Small\u00A0Businesses" },
 	{ path: "/workshops/", label: "Workshops" },
 	{ path: "/champions/", label: "Champions" },
 	{ path: "/about/", label: "About" },
 	{ path: "/contact/", label: "Contact" },
 	{ path: "/privacy-policy/", label: "Privacy Policy" },
 	{ path: "/terms-of-use/", label: "Terms of Use" },
+	{ path: "/cookie-policy/", label: "Cookie Policy" },
 ]
 
 test.describe("Navigation", () => {
@@ -69,7 +70,8 @@ test.describe("Navigation", () => {
 			(p) =>
 				p.path !== "/" &&
 				p.path !== "/privacy-policy/" &&
-				p.path !== "/terms-of-use/",
+				p.path !== "/terms-of-use/" &&
+				p.path !== "/cookie-policy/",
 		)
 
 		for (const { path, label } of navPages) {
@@ -111,6 +113,14 @@ test.describe("Navigation", () => {
 		await expect(termsCurrent).toHaveCount(1)
 		const termsText = await termsCurrent.textContent()
 		expect(termsText?.trim()).toBe("Terms")
+
+		await page.goto("/cookie-policy/")
+		const cookieCurrent = page.locator(
+			'nav[aria-label="Legal"] [aria-current="page"]',
+		)
+		await expect(cookieCurrent).toHaveCount(1)
+		const cookieText = await cookieCurrent.textContent()
+		expect(cookieText?.trim()).toBe("Cookies")
 	})
 
 	test("tab order starts with skip link then header links", async ({

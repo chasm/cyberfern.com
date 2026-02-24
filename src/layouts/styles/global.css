@@ -4,8 +4,8 @@
 	--color-shaded: hsl(57, 25%, 85%);
 	--color-dark: #134e31;
 	--color-highlight: #ffe900;
-	--color-link: oklch(45% 0.157 247deg);
-	--color-link-visited: oklch(47.1% 0.157 296deg);
+	--color-link: oklch(44% 0.157 247deg);
+	--color-link-visited: oklch(46.5% 0.157 296deg);
 
 	/* font sizes */
 	--step-0: clamp(1rem, 0.913rem + 0.4348vi, 1.25rem);
@@ -415,6 +415,11 @@
 	a,
 	a:visited {
 		color: var(--color-link);
+	}
+
+	.hero-text a:not(.button),
+	.hero-text a:not(.button):visited {
+		color: var(--color-light);
 	}
 
 	body > header a,

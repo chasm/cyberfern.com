@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /privacy-policy
-Disallow: /terms-of-use
+Disallow: /cookie-policy/
+Disallow: /privacy-policy/
+Disallow: /terms-of-use/

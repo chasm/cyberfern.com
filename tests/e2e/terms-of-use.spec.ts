@@ -1,14 +1,7 @@
 import { test, expect } from "@playwright/test"
 import AxeBuilder from "@axe-core/playwright"
 
-/**
- * Known axe-core violations on the existing site (pre-refactor).
- * These will be fixed in later phases.
- *
- * - color-contrast-enhanced: link colour #0057a6 on #fcfbf0 gives
- *   6.93:1 contrast — passes AA but fails AAA enhanced (7:1).
- */
-const KNOWN_VIOLATIONS = ["color-contrast-enhanced"]
+const BASE = "http://localhost:4321"
 
 test.describe("Terms of Use page", () => {
 	test("loads with 200 status", async ({ page }) => {
@@ -37,6 +30,45 @@ test.describe("Terms of Use page", () => {
 		expect(count).toBeGreaterThan(0)
 	})
 
+	test("content mentions key legal terms", async ({ page }) => {
+		await page.goto("/terms-of-use")
+		const article = page.locator("article")
+		const text = await article.textContent()
+		expect(text).toContain("CyberFern, Limited")
+		expect(text).toContain("copyright")
+		expect(text).toContain("revisions")
+	})
+
+	test("links to privacy policy and it resolves", async ({ page }) => {
+		await page.goto("/terms-of-use")
+		const privacyLink = page.locator('main a[href="/privacy-policy/"]')
+		await expect(privacyLink).toBeVisible()
+
+		const response = await page.goto("/privacy-policy/")
+		expect(response?.status()).toBe(200)
+	})
+
+	test("all internal links resolve", async ({ page }) => {
+		await page.goto("/terms-of-use")
+
+		const links = page.locator('a[href^="/"]')
+		const count = await links.count()
+
+		const hrefs = new Set<string>()
+		for (let i = 0; i < count; i++) {
+			const href = await links.nth(i).getAttribute("href")
+			if (href) hrefs.add(href)
+		}
+
+		for (const href of hrefs) {
+			const url = new URL(href, BASE)
+			const response = await page.request.get(url.toString())
+			expect(response.status(), `Internal link "${href}" should resolve`).toBe(
+				200,
+			)
+		}
+	})
+
 	test("axe-core accessibility scan passes (WCAG AAA)", async ({ page }) => {
 		await page.goto("/terms-of-use")
 		await page.waitForLoadState("networkidle")
@@ -50,7 +82,6 @@ test.describe("Terms of Use page", () => {
 				"wcag21aa",
 				"wcag22aa",
 			])
-			.disableRules(KNOWN_VIOLATIONS)
 			.analyze()
 
 		expect(

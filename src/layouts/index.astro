@@ -1,11 +1,13 @@
 ---
 import "./styles/global.css"
+import { pwaInfo } from "virtual:pwa-info"
 
 interface Props {
 	meta: {
 		description: string
 		ogImage?: string
 		ogType?: string
+		preloadHero?: boolean
 		robots?: string[]
 		title: string
 	}
@@ -22,6 +24,7 @@ const {
 	description,
 	ogImage = "/og-image.png",
 	ogType = "website",
+	preloadHero = true,
 	robots = ["index", "follow"],
 	title,
 } = meta
@@ -40,7 +43,7 @@ const breadcrumbSchema = isHome
 					"@type": "ListItem",
 					"position": 1,
 					"name": "Home",
-					"item": "https://cyberfern.com/",
+					"item": `${siteOrigin}/`,
 				},
 				{
 					"@type": "ListItem",
@@ -54,8 +57,8 @@ const organizationSchema = {
 	"@context": "https://schema.org",
 	"@type": "Organization",
 	"name": "CyberFern",
-	"url": "https://cyberfern.com",
-	"logo": "https://cyberfern.com/favicon.svg",
+	"url": siteOrigin,
+	"logo": `${siteOrigin}/favicon.svg`,
 	"description": "Cybersecurity made practical, proportionate, and human.",
 	"founder": {
 		"@type": "Person",
@@ -116,7 +119,15 @@ function isActive(href: string): boolean {
 		/>
 		<meta
 			name="viewport"
-			content="width=device-width"
+			content="width=device-width, initial-scale=1"
+		/>
+		<meta
+			name="theme-color"
+			content="#134e31"
+		/>
+		<meta
+			name="apple-mobile-web-app-capable"
+			content="yes"
 		/>
 		<link
 			href={Astro.url}
@@ -149,12 +160,16 @@ function isActive(href: string): boolean {
 			rel="apple-touch-icon"
 			href="/apple-touch-icon.png"
 		/>
-		<link
-			rel="preload"
-			as="image"
-			type="image/avif"
-			href="/images/hero.avif"
-		/>
+		{
+			preloadHero && (
+				<link
+					rel="preload"
+					as="image"
+					type="image/avif"
+					href="/images/hero.avif"
+				/>
+			)
+		}
 		<title>{title}</title>
 
 		<script
@@ -221,6 +236,8 @@ function isActive(href: string): boolean {
 			name="twitter:image"
 			content={ogImageAbsolute}
 		/>
+
+		{pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
 	</head>
 	<body>
 		<a
@@ -415,5 +432,9 @@ function isActive(href: string): boolean {
 				>
 			</section>
 		</footer>
+		<script>
+			import { registerSW } from "virtual:pwa-register"
+			registerSW({ immediate: true })
+		</script>
 	</body>
 </html>

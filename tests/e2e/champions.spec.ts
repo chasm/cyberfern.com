@@ -3,11 +3,6 @@ import AxeBuilder from "@axe-core/playwright"
 
 const BASE = "http://localhost:4321"
 
-/**
- * Known axe-core violations (pre-refactor).
- * - color-contrast-enhanced: link colour fails AAA enhanced (7:1).
- */
-const KNOWN_VIOLATIONS = ["color-contrast-enhanced"]
 
 test.describe("Champions page", () => {
 	test("loads with 200 status", async ({ page }) => {
@@ -123,7 +118,6 @@ test.describe("Champions page", () => {
 				"wcag21aa",
 				"wcag22aa",
 			])
-			.disableRules(KNOWN_VIOLATIONS)
 			.analyze()
 
 		expect(

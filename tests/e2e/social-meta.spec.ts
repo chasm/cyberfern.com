@@ -10,6 +10,7 @@ const pages = [
 	"/workshops/",
 	"/privacy-policy/",
 	"/terms-of-use/",
+	"/cookie-policy/",
 ]
 
 for (const path of pages) {
@@ -87,6 +88,17 @@ for (const path of pages) {
 				.locator('meta[property="og:type"]')
 				.getAttribute("content")
 			expect(ogType).toBe("website")
+		})
+
+		test("has canonical URL matching the page path", async ({ page }) => {
+			await page.goto(path)
+
+			const canonical = page.locator('link[rel="canonical"]')
+			await expect(canonical).toHaveCount(1)
+
+			const href = await canonical.getAttribute("href")
+			const url = new URL(href!)
+			expect(url.pathname).toBe(path)
 		})
 
 		test("has favicon link tags (SVG, ICO, apple-touch-icon)", async ({

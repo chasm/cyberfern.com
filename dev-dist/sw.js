@@ -78,8 +78,11 @@ define(['./workbox-5119daf5'], (function (workbox) { 'use strict';
    * See https://goo.gl/S9QRab
    */
   workbox.precacheAndRoute([{
+    "url": "suppress-warnings.js",
+    "revision": "d41d8cd98f00b204e9800998ecf8427e"
+  }, {
     "url": "/404.html",
-    "revision": "0.a1m4mceel8g"
+    "revision": "0.d59e9k66brk"
   }], {
     "directoryIndex": "index.html"
   });

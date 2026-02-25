@@ -163,10 +163,8 @@
 		text-align: center;
 	}
 
-	main .why,
-	main .expect,
-	main .testimonials,
-	main .workshops {
+	main .section-shaded,
+	main .section-light {
 		display: grid;
 		grid-column: screen-start / screen-end;
 		grid-template-columns: subgrid;
@@ -177,34 +175,26 @@
 		max-width: 70rem;
 	}
 
-	main .why header,
-	main .expect header,
-	main .testimonials header,
-	main .workshops header {
+	main .section-shaded header,
+	main .section-light header {
 		grid-column: col-start / span 4;
 		max-width: 70rem;
 		margin-block: 0 var(--space-m);
 		padding: 0;
 	}
 
-	main .why h2,
-	main .expect h2,
-	main .testimonials h2,
-	main .workshops h2 {
+	main .section-shaded h2,
+	main .section-light h2 {
 		margin-block: 0;
 	}
 
-	main .why > div,
-	main .expect > div,
-	main .testimonials > div,
-	main .workshops > div {
+	main .section-shaded > div,
+	main .section-light > div {
 		grid-column: col-start 5 / span 8;
 	}
 
-	main .why p,
-	main .expect p,
-	main .testimonials p,
-	main .workshops p {
+	main .section-shaded p,
+	main .section-light p {
 		margin: 0;
 		padding-block-end: var(--space-m);
 	}
@@ -300,24 +290,18 @@
 		grid-column: col-start / span 2;
 	}
 
-	body > header .logo address {
-		grid-column: col-start 3 / span 12;
-	}
-
 	main {
 		font-weight: 300;
 	}
 
 	main .what,
-	main .testimonials,
-	main .workshops {
+	main .section-light {
 		background-color: var(--color-light);
 		color: var(--color-dark);
 		padding-block: var(--space-l);
 	}
 
-	main .why,
-	main .expect {
+	main .section-shaded {
 		background-color: var(--color-middle);
 		color: var(--color-dark);
 		padding-block: var(--space-l);
@@ -341,10 +325,8 @@
 		padding-block-start: 3rem;
 	}
 
-	.why h2,
-	.expect h2,
-	.testimonials h2,
-	.workshops h2,
+	.section-shaded h2,
+	.section-light h2,
 	.about h2 {
 		padding-block-start: 0;
 	}
@@ -356,6 +338,11 @@
 
 	strong {
 		font-weight: 700;
+	}
+
+	blockquote {
+		margin: 0;
+		padding: 0;
 	}
 
 	.sr-only {
@@ -389,12 +376,6 @@
 	.logo p {
 		font-size: var(--step-2);
 		font-weight: 500;
-	}
-
-	.logo address {
-		font-size: var(--step-0);
-		font-style: normal;
-		font-weight: 400;
 	}
 
 	body > header nav ul {
@@ -510,11 +491,11 @@
 		width: 100%;
 	}
 
-	.workshops > div h3 {
+	.workshop-list > div h3 {
 		margin-block: var(--space-l) var(--space-3xs);
 	}
 
-	.workshops > div h3:first-child {
+	.workshop-list > div h3:first-child {
 		margin-block-start: 0;
 	}
 
@@ -720,27 +701,21 @@
 			grid-column: col-start 15 / span 4;
 		}
 
-		main .why,
-		main .expect,
-		main .testimonials,
-		main .workshops {
+		main .section-shaded,
+		main .section-light {
 			display: grid;
 			grid-column: screen-start / screen-end;
 			grid-template-columns: subgrid;
 			grid-template-rows: min-content min-content auto;
 		}
 
-		main .why header,
-		main .expect header,
-		main .testimonials header,
-		main .workshops header {
+		main .section-shaded header,
+		main .section-light header {
 			grid-column: col-start / span 6;
 		}
 
-		main .why p,
-		main .expect p,
-		main .testimonials p,
-		main .workshops p {
+		main .section-shaded p,
+		main .section-light p {
 			grid-column: col-start 7 / span 12;
 		}
 
@@ -895,10 +870,8 @@
 		}
 
 		main .what,
-		main .why,
-		main .expect,
-		main .testimonials,
-		main .workshops {
+		main .section-shaded,
+		main .section-light {
 			padding-block-start: var(--space-s);
 		}
 
@@ -913,27 +886,19 @@
 		main .audiences .one,
 		main .audiences .two,
 		main .audiences .three,
-		main .why header,
-		main .why > div,
-		main .why p,
-		main .expect header,
-		main .expect > div,
-		main .expect p,
-		main .testimonials header,
-		main .testimonials > div,
-		main .testimonials p,
-		main .workshops header,
-		main .workshops > div,
-		main .workshops p,
+		main .section-shaded header,
+		main .section-shaded > div,
+		main .section-shaded p,
+		main .section-light header,
+		main .section-light > div,
+		main .section-light p,
 		body > aside.about header,
 		body > aside.about .about-content {
 			grid-column: col-start / span 18;
 		}
 
-		.why h2,
-		.expect h2,
-		.testimonials h2,
-		.workshops h2,
+		.section-shaded h2,
+		.section-light h2,
 		.about h2 {
 			margin-block: 0;
 			padding-block: var(--space-l) var(--space-xs);

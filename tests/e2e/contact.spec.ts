@@ -29,7 +29,7 @@ test.describe("Contact page", () => {
 		const h2 = page.locator("h2", { hasText: "What to Reach Out About" })
 		await expect(h2).toBeVisible()
 
-		const section = page.locator(".why")
+		const section = page.locator(".section-shaded")
 		const text = await section.textContent()
 		expect(text).toContain("Free consultation")
 		expect(text).toContain("Training workshops")
@@ -42,7 +42,7 @@ test.describe("Contact page", () => {
 		await expect(h2).toBeVisible()
 
 		const emailLink = page.locator(
-			'.testimonials a[href="mailto:info@cyberfern.com"]',
+			'.section-light a[href="mailto:info@cyberfern.com"]',
 		)
 		await expect(emailLink).toBeVisible()
 
@@ -54,7 +54,7 @@ test.describe("Contact page", () => {
 
 	test("displays email address as text", async ({ page }) => {
 		await page.goto("/contact/")
-		const section = page.locator(".testimonials")
+		const section = page.locator(".section-light")
 		const text = await section.textContent()
 		expect(text).toContain("info@cyberfern.com")
 	})

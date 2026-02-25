@@ -22,7 +22,7 @@ test.describe("About page", () => {
 		const h2 = page.locator("h2", { hasText: "Background" })
 		await expect(h2).toBeVisible()
 
-		const section = page.locator(".why")
+		const section = page.locator("section.section-shaded").first()
 		const text = await section.textContent()
 		expect(text).toContain("full-stack")
 		expect(text).toContain("DevSecOps")
@@ -36,7 +36,7 @@ test.describe("About page", () => {
 		const h2 = page.locator("h2", { hasText: "Approach" })
 		await expect(h2).toBeVisible()
 
-		const section = page.locator(".testimonials")
+		const section = page.locator(".section-light")
 		const text = await section.textContent()
 		expect(text).toContain("boardrooms and server rooms")
 	})
@@ -61,7 +61,7 @@ test.describe("About page", () => {
 		const h2 = page.locator("h2", { hasText: "How CyberFern Can Help" })
 		await expect(h2).toBeVisible()
 
-		const section = page.locator(".expect")
+		const section = page.locator("section.section-shaded").last()
 		const text = await section.textContent()
 		expect(text).toContain("startups and small businesses")
 		expect(text).toContain("Training workshops")

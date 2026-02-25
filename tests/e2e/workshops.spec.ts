@@ -32,7 +32,7 @@ test.describe("Workshops page", () => {
 		const h2 = page.locator("h2", { hasText: "Our Workshops" })
 		await expect(h2).toBeVisible()
 
-		const headings = page.locator(".workshops h3")
+		const headings = page.locator(".workshop-list h3")
 		await expect(headings).toHaveCount(6)
 
 		for (const title of WORKSHOP_TITLES) {
@@ -44,7 +44,7 @@ test.describe("Workshops page", () => {
 	test("each workshop shows target audience", async ({ page }) => {
 		await page.goto("/workshops/")
 
-		const audienceMarkers = page.locator(".workshops p strong", {
+		const audienceMarkers = page.locator(".workshop-list p strong", {
 			hasText: "For:",
 		})
 		await expect(audienceMarkers).toHaveCount(6)
@@ -60,7 +60,7 @@ test.describe("Workshops page", () => {
 	test("shows logistics info", async ({ page }) => {
 		await page.goto("/workshops/")
 
-		const section = page.locator(".expect")
+		const section = page.locator(".section-shaded")
 		const text = await section.textContent()
 		expect(text).toContain("two hours")
 		expect(text).toContain("in-person or online")

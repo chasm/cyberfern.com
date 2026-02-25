@@ -72,7 +72,7 @@ test.describe("Home page", () => {
 
 		// Email CTA after testimonials
 		const emailCta = page.locator(
-			'.testimonials a[href="mailto:info@cyberfern.com"].button',
+			'.section-light a[href="mailto:info@cyberfern.com"].button',
 		)
 		await expect(emailCta).toHaveCount(1)
 	})

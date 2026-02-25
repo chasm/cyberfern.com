@@ -28,7 +28,7 @@ test.describe("Champions page", () => {
 		const h2 = page.locator("h2", { hasText: "How It Works" })
 		await expect(h2).toBeVisible()
 
-		const section = page.locator(".testimonials")
+		const section = page.locator(".section-light")
 		const text = await section.textContent()
 		expect(text).toContain("Discovery and planning")
 		expect(text).toContain("Team selection and kickoff")
@@ -42,7 +42,7 @@ test.describe("Champions page", () => {
 		const h2 = page.locator("h2", { hasText: "Proven Results" })
 		await expect(h2).toBeVisible()
 
-		const section = page.locator(".expect")
+		const section = page.locator("section.section-shaded").last()
 		const text = await section.textContent()
 		expect(text).toContain("Swiss Post")
 		expect(text).toContain("Log4Shell")

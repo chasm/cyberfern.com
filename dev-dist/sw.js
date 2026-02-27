@@ -82,7 +82,7 @@ define(['./workbox-5119daf5'], (function (workbox) { 'use strict';
     "revision": "d41d8cd98f00b204e9800998ecf8427e"
   }, {
     "url": "/404.html",
-    "revision": "0.d59e9k66brk"
+    "revision": "0.lfs0cdlp4s4"
   }], {
     "directoryIndex": "index.html"
   });

@@ -10,18 +10,16 @@ pnpm-debug.log*
 
 .DS_Store
 
-dist/*
-.cache/*
-.history/*
-.vscode/*
+dist/
+.cache/
+.history/
+.vscode/
 
-temp/*
+temp/
 coverage/
 
 .vercel/
-docs/*
-temp/*
-.vercel
+docs/
 
 # Playwright
 test-results/

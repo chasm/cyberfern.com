@@ -88,6 +88,7 @@ const pages = [
 	{ name: "Privacy Policy", path: "/privacy-policy/" },
 	{ name: "Terms of Use", path: "/terms-of-use/" },
 	{ name: "Cookie Policy", path: "/cookie-policy/" },
+	{ name: "Offline", path: "/offline/" },
 ]
 
 for (const pg of pages) {

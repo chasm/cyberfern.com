@@ -1,0 +1,29 @@
+---
+import Layout from "~layouts/index.astro"
+
+const meta = {
+	description: "You are currently offline.",
+	preloadHero: false,
+	robots: ["noindex", "nofollow"],
+	title: "Offline | CyberFern",
+}
+---
+
+<Layout {meta}>
+	<main id="main-content">
+		<section class="hero">
+			<div class="hero-text">
+				<header>
+					<h1>You're offline</h1>
+				</header>
+				<p>
+					It looks like you've lost your internet connection. Please check
+					your connection and try again.
+				</p>
+				<p>
+					<a href="/">Return to the home page</a> when you're back online.
+				</p>
+			</div>
+		</section>
+	</main>
+</Layout>

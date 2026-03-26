@@ -81,13 +81,13 @@ define(['./workbox-5119daf5'], (function (workbox) { 'use strict';
     "url": "suppress-warnings.js",
     "revision": "d41d8cd98f00b204e9800998ecf8427e"
   }, {
-    "url": "/404.html",
-    "revision": "0.lfs0cdlp4s4"
+    "url": "/offline/index.html",
+    "revision": "0.tpc8guqi41s"
   }], {
     "directoryIndex": "index.html"
   });
   workbox.cleanupOutdatedCaches();
-  workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("/404.html"), {
+  workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("/offline/index.html"), {
     allowlist: [/^\/$/],
     denylist: [/^\/api\//, /^\/auth\//]
   }));

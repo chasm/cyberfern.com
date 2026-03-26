@@ -73,3 +73,15 @@ await sharp(Buffer.from(ogSvg))
 	.png()
 	.toFile(resolve(publicDir, "og-image.png"))
 console.log("Created public/og-image.png (1200x630)")
+
+// --- 5. WFW badge (avif + webp from png) ---
+const wfwBadge = resolve(publicDir, "images", "wfw-badge.png")
+await sharp(wfwBadge)
+	.avif({ quality: 80 })
+	.toFile(resolve(publicDir, "images", "wfw-badge.avif"))
+console.log("Created public/images/wfw-badge.avif")
+
+await sharp(wfwBadge)
+	.webp({ quality: 80 })
+	.toFile(resolve(publicDir, "images", "wfw-badge.webp"))
+console.log("Created public/images/wfw-badge.webp")

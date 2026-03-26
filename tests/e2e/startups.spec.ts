@@ -48,6 +48,19 @@ test.describe("Startups page", () => {
 		}
 	})
 
+	test("has WFW badge linking to directory", async ({ page }) => {
+		await page.goto("/startups/")
+
+		const badge = page.locator(
+			'a[href="https://whatfounderswant.com/startup-service-providers"] img',
+		)
+		await expect(badge).toBeVisible()
+		await expect(badge).toHaveAttribute(
+			"alt",
+			/Founder Ready Service Provider/,
+		)
+	})
+
 	test("all images load (no broken src)", async ({ page }) => {
 		await page.goto("/startups/")
 		await page.waitForLoadState("networkidle")

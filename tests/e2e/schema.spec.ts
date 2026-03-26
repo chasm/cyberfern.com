@@ -61,6 +61,12 @@ const pages = [
 		hasPageSchema: false,
 		hasBreadcrumb: true,
 	},
+	{
+		name: "Offline",
+		path: "/offline/",
+		hasPageSchema: false,
+		hasBreadcrumb: true,
+	},
 ]
 
 for (const pg of pages) {

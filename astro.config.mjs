@@ -7,6 +7,7 @@ const ignore = [
 	"https://cyberfern.com/cookie-policy/",
 	"https://cyberfern.com/privacy-policy/",
 	"https://cyberfern.com/terms-of-use/",
+	"https://cyberfern.com/offline/",
 ]
 
 // https://astro.build/config
@@ -58,7 +59,7 @@ export default defineConfig({
 				globPatterns: [
 					"**/*.{html,css,js,svg,png,webp,avif,ico,woff2}",
 				],
-				navigateFallback: "/404.html",
+				navigateFallback: "/offline/index.html",
 				navigateFallbackDenylist: [/^\/api\//, /^\/auth\//],
 			},
 			devOptions: {
